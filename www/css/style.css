@@ -1,0 +1,107 @@
+/*トップページのCSS*/
+
+#push-button {
+  width:150px;
+  border-radius:20px;
+  box-shadow:0 7px 0 rgb(31, 115, 148);
+  margin-top:300px;
+}
+
+#push-button:active {
+  width:150px;
+  border-radius:20px;
+  box-shadow:0 3px 0 rgb(31, 115, 148);
+  margin-top:304px;
+}
+
+.left-text {
+  text-align:left;
+  font-weight:bold;
+  font-size:36px;
+  color:rgb(182,209,209);
+  margin-top:50px;
+  margin-left:32px;
+  margin-bottom:0;
+}
+.right-text {
+  text-align:right;
+  font-weight:bold;
+  font-size:36px;
+  color:rgb(182,209,209);
+  margin-right:32px;
+}
+
+.center {
+  font-weight:bold;
+}
+
+
+.manga, .select-manga {
+  width:120px;
+  height:100px;
+}
+.ace {
+  width:120px;
+  height:100px;
+}
+
+.selectone {
+  margin-bottom:70px;
+}
+.select-one {
+  margin-bottom:30px;
+}
+
+
+
+/* 漫画ページのCSS */
+.genretext {
+  font-weight: bold;
+}
+
+.items {
+  margin:0 auto;
+  margin-bottom:5px;
+  width:340px;
+  border-bottom:3px solid rgb(83, 197, 150);
+  height:110px;
+  line-height:110px;
+  border-radius:4px;
+}
+
+img.select-manga{
+  vertical-align: bottom;
+  margin-left:20px;
+  margin-top:5px;
+
+}
+
+a.manga-text {
+  font-size:25px;
+  display:block;
+  width:330px;
+  height:105px;
+  margin:0 auto;
+  text-decoration: none;
+  display:flex; 
+  justify-content: space-between;
+  
+} 
+
+a.manga-text:active {
+  background:rgb(168, 173, 173);
+  padding-bottom:6px;
+}
+
+h1.mang {
+  line-height:105px;
+  color:rgb(100, 102, 85);
+  font-size:36px;
+  margin-right:15px;
+}
+
+
+
+
+/* アニメページのCSS
+　大体のレイアウトは漫画の方と共通 */

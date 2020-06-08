@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+      if (page.matches('#first-page')) {
+
+        page.querySelector('#push-button').onclick = function() {
+          document.querySelector('#navigator').pushPage('page2.html');
+        };
+
+      } else if (page.matches('#second-page')) {
+
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        };
+      }
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <div class="page__background" style="background-image:url('img/top.jpg'); background-size:cover;margin:0 auto;"></div>
+      <ons-toolbar>
+        <div class="center">始めますか？</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p class="left-text">～暇になったら</p>
+        <p class="right-text">やってみよう～</p>
+        <ons-button id="push-button">暇です</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page2.html">
+    <ons-page id="second-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>TOPへ</ons-back-button></div>
+        <div class="center">どちらか選んでください</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        
+        <p class="selectone">漫画かアニメどちらにしますか？</p>
+
+        <div class="select-one">
+          <a href="comicGenre.html" class="comic">漫画</a>
+          <img class="manga" src="img/漫画.png"><br>
+        </div>
+        <div class="select-one">
+          <img class="ace" src="img/ace.jpg">
+          <a href="animeGenre.html" class="anime">アニメ</a><br>
+        </div>
+
+        <ons-button class="select btn" id="pop-button">Pop page</ons-button>
+      </div>
+      </div>
+    </ons-page>
+  </ons-template>
+</body>
+</html>
