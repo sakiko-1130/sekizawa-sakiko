@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+      if (page.matches('#first-page')) {//野球かバレーか
+        //野球へゴー
+        page.querySelector('#push-button').onclick = function() {
+          document.querySelector('#navigator').pushPage('page2.html');
+        };
+        //バレーへゴー
+        page.querySelector('#push-vbutton').onclick = function() {
+          document.querySelector('#navigator').pushPage('page4.html');
+        };
+
+      } else if (page.matches('#second-page')) {//野球紹介
+        //戻る
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        };
+        //次の野球へ
+        page.querySelector('#push-bbutton').onclick = function() {
+          document.querySelector('#navigator').pushPage('page3.html');
+        };
+
+      } else if (page.matches('#third-page')) {
+
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        };
+      } else if (page.matches('#four-page')) {
+
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        }; 
+
+        page.querySelector('#push-bbutton').onclick = function() {
+          document.querySelector('#navigator').pushPage('page5.html');
+        };
+      } else if (page.matches('#five-page')) {
+
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        }; 
+      }
+
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar>
+        <div class="center">セレクト</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>どちらか選んでください</p>
+        <ons-button id="push-button">野球へ</ons-button>
+        <ons-button id="push-vbutton">バレーへ</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page2.html">
+    <ons-page id="second-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">野球漫画</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>あなたにおすすめの野球漫画は…</p>
+        <h1>「H2」</h1>
+        <p>です！！</p>
+        <img src="img/animes/meja.png" class="animes-img"><br>
+        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+        <a href="https://www.shopro.co.jp/tv/major2nd/" class="sarani">気になる</a>
+        <ons-button id="pop-button">戻る</ons-button>
+        <ons-button id="push-bbutton">次の作品へ</ons-button><br>
+        
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page3.html">
+    <ons-page id="third-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">野球漫画</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>続いての野球漫画は…</p>
+        <h1>「バトルスタディーズ」</h1>
+        <p>です！！</p>
+        <img src="img/animes/daia.jpg" class="animes-img"><br>
+        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+        <ons-button id="pop-button">前の作品へ</ons-button><br>
+        <a href="https://diaace.com/"class="sarani">気になる</a><br>
+        <a href="index.html">カビゴン</a>
+      </div>
+    </ons-page>
+  </ons-template>
+ 
+  <ons-template id="page4.html">
+    <ons-page id="four-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>カテゴリへ</ons-back-button></div>
+        <div class="center">バレー漫画</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>あなたにおすすめのバレー漫画は…</p>
+        <h1>「神様のバレー」</h1>
+        <p>です！！</p>
+        <img src="img/animes/haikyu.jpg" class="animes-img"><br>
+        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+        <a href="https://haikyu.jp/"class="sarani">気になる</a> 
+        <ons-button id="pop-button">戻る</ons-button>
+      <ons-button id="push-bbutton">次の作品へ</ons-button><br>
+      
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page5.html">
+    <ons-page id="five-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>カテゴリへ</ons-back-button></div>
+        <div class="center">バレー漫画</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>あなたにおすすめのバレー漫画は…</p>
+        <h1>「ハリガネサービス」</h1>
+        <p>です！！</p>
+        <img src="img/animes/haikyu.jpg" class="animes-img"><br>
+        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+        <a href="https://haikyu.jp/"class="sarani">気になる</a><br>
+        <ons-button id="pop-button">前の作品へ</ons-button><br>
+        <a href="index.html"class="tophe">TOPへ</a>
+      </div>
+    </ons-page>
+  </ons-template>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+      if (page.matches('#first-page')) {
+
+        page.querySelector('#push-button').onclick = function() {
+          document.querySelector('#navigator').pushPage('page2.html');
+        };
+
+      } else if (page.matches('#second-page')) {
+
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        };
+
+      } 
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar>
+        <div class="center">戦闘アニメ</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>あなたにおすすめの戦闘アニメは…</p>
+        <h1>「ソードアートオンライン」</h1>
+        <p>です！！</p>
+        <img src="img/animes/sao.jpg" class="animes-img"><br>
+        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+        <a href="https://www.swordart-online.net/"class="sarani">気になる</a><br>
+        <ons-button id="push-button">次の作品へ</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page2.html">
+    <ons-page id="second-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">戦闘アニメ</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>続いての戦闘アニメは…</p>
+        <h1>「犬夜叉」</h1>
+        <p>です！！</p>
+        <img src="img/animes/inu.jpg" class="animes-img"><br>
+        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+        <a href="https://www.ytv.co.jp/inuyasha/"class="sarani">気になる</a><br>
+        <ons-button id="pop-button">前の作品へ</ons-button><br>
+        <a href="index.html"class="tophe">TOPへ</a>>カビゴン</a>
+      </div>
+    </ons-page>
+  </ons-template>
+
+ 
+</body>
+</html>

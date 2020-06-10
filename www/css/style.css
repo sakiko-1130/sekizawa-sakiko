@@ -1,16 +1,16 @@
 /*トップページのCSS*/
 
-#push-button {
+.start {
   width:150px;
   border-radius:20px;
-  box-shadow:0 7px 0 rgb(31, 115, 148);
+  box-shadow:0 7px 0 rgb(0, 110, 255);
   margin-top:300px;
 }
 
-#push-button:active {
+.start:active {
   width:150px;
   border-radius:20px;
-  box-shadow:0 3px 0 rgb(31, 115, 148);
+  box-shadow:0 3px 0 rgb(0, 110, 255);
   margin-top:304px;
 }
 
@@ -45,13 +45,61 @@
   height:100px;
 }
 
-.selectone {
+
+.select-one {
   margin-bottom:70px;
 }
-.select-one {
-  margin-bottom:30px;
+
+.selectone {
+  margin-top:50px;
+  margin-bottom:70px;
+  font-size:20px;
 }
 
+/* .kategori {
+} */
+/* 共通ボタン */
+.idou{
+  text-decoration: none;
+  font-size:15px;
+}
+
+.button {
+  width:130px;
+}
+
+.sarani, .tophe {
+  display:block;
+  border:1px solid rgb(229, 255, 0);
+  width:110px;
+  height:32px;
+  padding:4px 10px;
+  text-decoration: none;
+  line-height:32px;
+  background-color:orange;
+  color:white;
+  border-radius:4px;
+  margin:0 auto;
+  margin-bottom:10px;
+}
+
+.kategori {
+  width:160px;
+}
+
+.tophe {
+  background-color:red;
+  margin-top:30px;
+}
+
+div.page__background {
+  background-color:rgb(206, 241, 255);
+}
+
+.itiran {
+  width:200px;
+  margin-top:20px;
+}
 
 
 /* 漫画ページのCSS */
@@ -100,8 +148,47 @@ h1.mang {
   margin-right:15px;
 }
 
+.itiran {
+  margin-top:0;
+}
+
+table {
+  margin-bottom:20px;
+}
+/* 漫画の一覧表 */
+
+
+.select-btn {
+  width:300px;
+  margin:40px;
+  text-align :center;
+}
+td, th {
+  font-size:22px;
+  text-align:center;
+  color:white;
+  height:70px;
+}
+ th {
+   color:rgb(56, 56, 56);
+ }
+
+
 
 
 
 /* アニメページのCSS
 　大体のレイアウトは漫画の方と共通 */
+
+/* アニメ紹介 */
+
+.animes-img {
+  width:300px;
+}
+
+.anime-text {
+  width:300px;
+  margin:0 auto;
+  margin-top:30px;
+  margin-bottom:30px;
+}
