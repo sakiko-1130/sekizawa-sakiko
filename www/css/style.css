@@ -106,9 +106,10 @@ h1 {
   text-shadow:1px 1px 0 rgb(184, 181, 181);
 }
 /* お気に入りボタン */
-#favorite, #okini {
+#favorite, #okini, #okiniiri {
   width:32px;
   height:32px;
+  margin-bottom:10px;
 }
 
 
