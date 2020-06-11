@@ -13,16 +13,45 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-      const gazou = ['img/hosimae.png','img/hosiato.png'];
-    const img = document.getElementById('favorite');
-
-    img.addEventListener('click', () => {
-      if(img.src === 'img/hosimae.png') {
-        img.src = 'img/hosiato.png';
-      } else {
-        img.src = 'img/hosimae.png';
+    // (function() {今すぐ実行
+      // const img = document.getElementById('favorite');
+    // }());
+    window.onload = function() {  //最後に実行
+      var gazou = ['img/hosimae.png','img/hosiato.png'];
+      const img = document.getElementById('favorite');
+      img.src = gazou[0];
+      // const okini = document.getElementById('okini');
+      // okini.src = gazou[0];
+      //どこかで関数を定義する
+      const toggle = (element) => {
+        const dest = element.src;
+        const src = element.getAttribute("data-destsrc");
+        element.src = src;
+        element.setAttribute("data-destsrc", dest);
+      };
+      //星のクリック時に上記の関数が発火するようにする
+      img.onclick = () => {
+        toggle(img);
       }
-    });
+
+      const okini = document.getElementById('okini');
+      okini.src = gazou[0];
+
+      const tgl = (element) => {
+        const hosi = element.src;
+        const hosio = element.getAttribute("data-hosi");
+        hosio.src = src;
+        element.setAttribute("data-hosi", hosi);
+      }
+
+      okini.onclick = () => {
+        tgl(okini);
+      }
+    }
+      
+    // document.addEventListener('DOMContentLoaded', function() {
+
+    // });
 
     // Page init event
     document.addEventListener('init', function(event) {
@@ -68,14 +97,14 @@
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
-        <p>あなたにおすすめの恋愛アニメは…</p>
+        <p id="oni">あなたにおすすめの恋愛アニメは…</p>
         <h1>「四月は君の嘘」</h1>
         <p>です！！</p>
         <img src="img/animes/sigatu.jpg" class="animes-img"><br>
         <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
-        <div class="favorite">
+        <div>
           <a href="https://www.kimiuso.jp/sp" class="sarani">気になる</a>
-          <img src="img/hosimae.png" id="favorite">
+          <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="favorite">
         </div>
       
           
@@ -97,7 +126,8 @@
         <p>です！！</p>
         <img src="img/animes/otakoi.jpg" class="animes-img"><br>
         <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
-        <a href="https://wotakoi-anime.com/" class="sarani">気になる</a><br>
+        <a href="https://wotakoi-anime.com/" class="sarani">気になる</a>
+        <img src="img/hosimae.png" data-hosi="img/hosiato.png" id="okini"><br>
         <ons-button id="pop-button">前の作品へ</ons-button>
         <ons-button id="push-button">次の作品へ</ons-button>
       </div>
