@@ -8,6 +8,7 @@
     }
   } 
 
+  //星の色（画像）を交換する
   const setStar = (element) => {
     if (!localStorage.getItem(element.id) || localStorage.getItem(element.id) !== "true") {
       element.src = "img/hosimae.png";
@@ -16,16 +17,22 @@
     }
   }
   
- // if(page.matches('#first-page') )|| page.matches('#second-page')|| page.matches('#third-page') || page.matches('#four-page') || page.matches('#five-page')) {};
  
-  window.onload = function() {
-    document.querySelectorAll('.hosikun').forEach((element) => {
+  // window.onload = function() {
+    document.addEventListner('init', function(event) {
+
+    document.querySelectorAll('.hosikun').forEach((element) => {  
+      //前回の時点でお気に入りに登録したものを読み込む。（星を黄色にする）
+      setStar(element); 
+
+      // クリックしたときにLocal Storageに情報取得と星を入れ替える
       element.onclick = () => {
         toggle(element);
         setStar(element);
       }
     });
 
+    //Local Storageの中身を順番に表に埋め込んでいく
     for (var i=0; i < localStorage.length; i++) {
       var _key = localStorage.key(i);
       var tr = document.createElement("tr");
@@ -34,18 +41,19 @@
       var td3 = document.createElement("td");
       tb.appendChild(tr);
       tr.appendChild(td1);
-      tr.appendChild(td2)
-      tr.appendChild(td3);
+      // tr.appendChild(td2)
+      // tr.appendChild(td3);
       td1.innerHTML = _key;
       // td2.innerHTML = localStorage.getItem(_key);
       //キーの部分↑
       // td3.innerHTML = '<input type="button" onclick="removeStorage(\'' + _key + '\')" value="削除">';
     }
-    document.getElementById("save").onclick = function() { 
-      saveStorage();
-    };
+    // document.getElementById("save").onclick = function() { 
+    //   saveStorage();
+    // };
+    
+   
+  });
 
-  };
 
- 
 }

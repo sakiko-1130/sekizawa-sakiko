@@ -1,6 +1,6 @@
-/*トップページのCSS*/
 
-.start {
+/*トップページのCSS*/
+.start { /* 暇だボタン */
   width:150px;
   border-radius:20px;
   box-shadow:0 7px 0 rgb(0, 110, 255);
@@ -14,7 +14,8 @@
   margin-top:304px;
 }
 
-.left-text {
+
+.left-text { /* タイトルテキスト */
   text-align:left;
   font-weight:bold;
   font-size:36px;
@@ -23,7 +24,7 @@
   margin-left:32px;
   margin-bottom:0;
 }
-.right-text {
+.right-text {/* タイトルテキスト */
   text-align:right;
   font-weight:bold;
   font-size:36px;
@@ -31,7 +32,7 @@
   margin-right:32px;
 }
 
-.center {
+.center {/* ヘッダーの文字 */
   font-weight:bold;
 }
 
