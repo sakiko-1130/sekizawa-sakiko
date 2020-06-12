@@ -33,10 +33,13 @@
     });
 
     //Local Storageの中身を順番に表に埋め込んでいく
+
     for (var i=0; i < localStorage.length; i++) {
       var _key = localStorage.key(i);
       var tr = document.createElement("tr");
       var td1 = document.createElement("td");
+
+
       // var td2 = document.createElement("td");
       // var td3 = document.createElement("td");
       tb.appendChild(tr);
