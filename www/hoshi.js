@@ -34,10 +34,11 @@
       var td3 = document.createElement("td");
       tb.appendChild(tr);
       tr.appendChild(td1);
-      tr.appendChild(td2);
+      tr.appendChild(td2)
       tr.appendChild(td3);
       td1.innerHTML = _key;
-      td2.innerHTML = localStorage.getItem(_key);
+      // td2.innerHTML = localStorage.getItem(_key);
+      //キーの部分↑
       // td3.innerHTML = '<input type="button" onclick="removeStorage(\'' + _key + '\')" value="削除">';
     }
     document.getElementById("save").onclick = function() { 

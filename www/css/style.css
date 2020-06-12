@@ -68,7 +68,7 @@
   width:130px;
 }
 
-.sarani, .tophe {
+.sarani, .tophe, .okinis  {
   display:block;
   border:1px solid rgb(229, 255, 0);
   width:110px;
@@ -81,6 +81,10 @@
   border-radius:4px;
   margin:0 auto;
   margin-bottom:10px;
+}
+
+.okinis {
+  width:150px;
 }
 
 .kategori {
