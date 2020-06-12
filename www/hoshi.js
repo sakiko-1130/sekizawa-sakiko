@@ -19,7 +19,7 @@
   
  
   // window.onload = function() {
-    document.addEventListner('init', function(event) {
+    document.addEventListener('init', function(event) {
 
     document.querySelectorAll('.hosikun').forEach((element) => {  
       //前回の時点でお気に入りに登録したものを読み込む。（星を黄色にする）
@@ -37,8 +37,8 @@
       var _key = localStorage.key(i);
       var tr = document.createElement("tr");
       var td1 = document.createElement("td");
-      var td2 = document.createElement("td");
-      var td3 = document.createElement("td");
+      // var td2 = document.createElement("td");
+      // var td3 = document.createElement("td");
       tb.appendChild(tr);
       tr.appendChild(td1);
       // tr.appendChild(td2)

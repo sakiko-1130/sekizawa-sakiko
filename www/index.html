@@ -6,6 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -13,7 +14,6 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
@@ -56,6 +56,10 @@
 
       } else if (page.matches('#four-page')) {
         //漫画一覧page
+        
+        
+
+        
         //漫画かアニメ選択へ
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -125,7 +129,7 @@
           <img class="ace" src="img/tv.png">
           <ons-button id="push-4button"class="kategori">アニメカテゴリへ</ons-button>
         </div>
-        <a href="favorite.html" class="okinis">お気に入り一覧へ</a>
+        <a href="okiniitiran.html" class="okinis">お気に入り一覧へ</a>
 
         <!-- <ons-button class="select btn" id="pop-button">Pop page</ons-button> -->
       </div>
@@ -227,7 +231,7 @@
 
       <div class="content" style="text-align: center">
         
-        <p class="selectone">漫画かアニメどちらにしますか？</p>
+        <p class="selected">漫画一覧</p>
 
 <!-- 漫画の一覧の図 -->
          <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
@@ -264,11 +268,11 @@
             </tr>
             <tr>
               <td>戦闘</td>
-              <td>ワンダフルデイズ</td> 
+              <td>七つの大罪</td> 
             </tr>
             <tr>
               <td>戦闘</td>
-              <td>ワンダフルデイズ</td> 
+              <td>結界師</td> 
             </tr>
             <tr>
               <td>学園</td>
@@ -301,6 +305,22 @@
             <tr>
               <td>ギャグ</td>
               <td>ブラックナイト<br>パレード</td> 
+            </tr>
+            <tr>
+              <td>勉強</td>
+              <td>コウノドリ</td> 
+            </tr>
+            <tr>
+              <td>勉強</td>
+              <td>はたらく細胞</td> 
+            </tr>
+            <tr>
+              <td>塔を上る</td>
+              <td>リセットゲーム</td> 
+            </tr>
+            <tr>
+              <td>塔を上る</td>
+              <td>神之塔</td> 
             </tr>
             <tr>
               <td>料理</td>
@@ -409,7 +429,7 @@
 
       <div class="content" style="text-align: center">
         
-        <p class="selectone">漫画かアニメどちらにしますか？</p>
+        <p class="selected">アニメ一覧</p>
 <!-- アニメ一覧 -->
         <table border="3" bordercolor="blue" bgcolor="skyblue"  width="90%" height="200"style="margin:0 auto;">
           <thead>
@@ -460,16 +480,16 @@
               <td>ハイキュー</td> 
             </tr>
             <tr>
-              <td>勉強</td>
-              <td>Dr.STONE</td> 
-            </tr>
-            <tr>
               <td>ギャグ</td>
               <td>ぐらんぶる</td> 
             </tr>
             <tr>
               <td>ギャグ</td>
               <td>ボボボーボ・<br>ボーボボ</td> 
+            </tr>
+            <tr>
+              <td>勉強</td>
+              <td>Dr.STONE</td> 
             </tr>
             <tr>
               <td>近未来</td>
