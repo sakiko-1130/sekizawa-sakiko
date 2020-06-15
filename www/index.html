@@ -43,8 +43,34 @@
           document.querySelector('#navigator').pushPage('page5.html');
         };
 
-
       } else if (page.matches('#third-page')) {//漫画カテゴリpage
+
+        for (var i=0; i < 10; i++) {
+        var div = document.createElement("div");
+        var a = document.createElement("a");
+        var img = document.createElement("img");
+        var h = document.createElement("h1");
+        div.classList.add("items");
+        a.classList.add("manga-text");
+        img.classList.add("select-manga");
+        h.classList.add("mang");
+        a.href = genre[i].chref;
+        img.src = genre[i].src;
+        h.textContent = genre[i].genr;
+        var cgenre = document.getElementById("cgenre");
+        cgenre.appendChild(div);
+        div.appendChild(a);
+        a.appendChild(img);
+        a.appendChild(h);
+        if(i === 9){
+          var top = document.createElement("a");
+          top.classList.add("tophe");
+          top.textContent = "TOPへ";
+          top.href = "index.html";
+          cgenre.appendChild(top);
+        }
+      }
+
         //漫画かアニメ選択へ（戻る）
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -86,6 +112,37 @@
 
 
       } else if (page.matches('#five-page')) {//アニメカテゴリpage
+
+        for (var i=0; i < 11; i++) {
+          if(i === 8 || i === 9){
+            continue;
+          }
+          var div = document.createElement("div");
+          var a = document.createElement("a");
+          var img = document.createElement("img");
+          var h = document.createElement("h1");
+          div.classList.add("items");
+          a.classList.add("manga-text");
+          img.classList.add("select-manga");
+          h.classList.add("mang");
+          a.href = genre[i].ahref;
+          img.src = genre[i].src;
+          h.textContent = genre[i].genr;
+          var agenre = document.getElementById("agenre");
+          agenre.appendChild(div);
+          div.appendChild(a);
+          a.appendChild(img);
+          a.appendChild(h);
+
+          if(i === 10){
+            var top = document.createElement("a");
+            top.classList.add("tophe");
+            top.textContent = "TOPへ";
+            top.href = "index.html";
+            agenre.appendChild(top);
+          }
+        }
+
         //漫画かアニメ選択へ(戻る）
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -105,8 +162,8 @@
           td1.textContent = animes[i].id;
           td2.textContent = animes[i].title;
           
-          var tb = document.getElementById("tb");
-          tb.appendChild(tr);
+          var tble = document.getElementById("tble");
+          tble.appendChild(tr);
           tr.appendChild(td1);
           tr.appendChild(td2)
         }
@@ -163,7 +220,6 @@
           <ons-button id="push-4button"class="kategori">アニメカテゴリへ</ons-button>
         </div>
         <a href="okiniitiran.html" class="okinis">お気に入り一覧へ</a>
-        <a href="itiran.html">hyouhe</a>
 
         <!-- <ons-button class="select btn" id="pop-button">Pop page</ons-button> -->
       </div>
@@ -173,7 +229,7 @@
 
 
 
-  <!-- 漫画カテゴリ -->
+  <!-- 漫画のカテゴリpage -->
   <ons-template id="page3.html">
     <ons-page id="third-page">
       <ons-toolbar>
@@ -181,81 +237,17 @@
         <div class="center">漫画セレクト</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        
+      <div class="content" id="cgenre" style="text-align: center">
         <p class="genretext">気になるカテゴリを一つ選んでね</p>
-
-        <div class="items">
-          <a href="comickoi.html" class="manga-text">
-            <img class="select-manga" src="img/love.png">
-            <h1 class="mang">恋愛</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="comicbouken.html" class="manga-text">
-            <img class="select-manga" src="img/bouken.jpg">
-            <h1 class="mang">冒険</h1>
-          </a><br>
-        </div> 
-        <div class="items">
-          <a href="comicsentou.html" class="manga-text">
-            <img class="select-manga" src="img/buki.png">
-            <h1 class="mang">戦闘</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="comicsport.html" class="manga-text">
-            <img class="select-manga" src="img/suport.png">
-            <h1 class="mang">スポーツ</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="comicstudy.html" class="manga-text">
-            <img class="select-manga" src="img/study.png">
-            <h1 class="mang">勉強</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="comicgyag.html" class="manga-text">
-            <img class="select-manga" src="img/warai.jpg">
-            <h1 class="mang">ギャグ</h1>
-          </a><br>
-        </div> 
-        <div class="items">
-          <a href="comicgakuen.html" class="manga-text">
-            <img class="select-manga" src="img/gakkou.jpg">
-            <h1 class="mang">学園</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="comiccook.html" class="manga-text">
-            <img class="select-manga" src="img/cook.png">
-            <h1 class="mang">料理</h1>
-          </a><br>
-        </div> 
-        <div class="items">
-          <a href="comicaidl.html" class="manga-text">
-            <img class="select-manga" src="img/aidl.jpg">
-            <h1 class="mang">アイドル</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="comictou.html" class="manga-text">
-            <img class="select-manga" src="img/kaidann.jpg">
-            <h1 class="mang">塔を上る</h1>
-          </a><br>
-        </div>
-
-        <ons-button class="select btn" id="pop-button">戻る</ons-button>
-        <ons-button id="push-button">漫画一覧へ</ons-button>
-       
+        <ons-button class="select btn" id="pop-button"></ons-button>
+        <ons-button id="push-button"></ons-button>
       </div>
       </div>
     </ons-page>
   </ons-template>
 
 
-  <!-- 漫画一覧画面 -->
+<!-- 漫画一覧画面 -->
   <ons-template id="page4.html">
     <ons-page id="four-page">
       <ons-toolbar>
@@ -267,22 +259,21 @@
         
         <p class="selected">漫画一覧</p>
 
-<!-- 漫画の一覧の図 -->
-      <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
-        <thead>
-          <tr>
-            <th style="width:40%">ジャンル</th>
-            <th style="width:60%;">タイトル</th>
-            <!-- <th>ボタン</th> -->
-          </tr>
-        </thead>
-        <tbody id="tbl" style="font-size:25px;">
-        </tbody>
-      </table>
+       <!-- 漫画の一覧の表 -->
+        <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
+          <thead>
+            <tr>
+              <th style="width:40%">ジャンル</th>
+              <th style="width:60%;">タイトル</th>
+              <!-- <th>ボタン</th> -->
+            </tr>
+          </thead>
+          <tbody id="tbl" style="font-size:25px;">
+          </tbody>
+        </table>
 
         <ons-button class="itiran btn" id="pop-button" style="margin-top:20px;">セレクト画面へ</ons-button>
 
-        
       </div>
       </div>
     </ons-page>
@@ -298,67 +289,11 @@
         <div class="center">アニメセレクト</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
+      <div class="content" id="agenre" style="text-align: center">
         
         <p class="genretext">ジャンルを一つ選んでね</p>
-
-        <div class="items">
-          <a href="animekoi.html" class="manga-text">
-            <img class="select-manga" src="img/love.png">
-            <h1 class="mang">恋愛</h1>
-          </a><br>
-        </div>
-        <div class="items">
-        <a href="animebouken.html" class="manga-text">
-          <img class="select-manga" src="img/bouken.jpg">
-          <h1 class="mang">冒険</h1>
-        </a><br>
-        </div> 
-        <div class="items">
-          <a href="animesentou.html" class="manga-text">
-            <img class="select-manga" src="img/buki.png">
-            <h1 class="mang">戦闘</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="animesuports.html" class="manga-text">
-            <img class="select-manga" src="img/suport.png">
-            <h1 class="mang">スポーツ</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="animestudy.html" class="manga-text">
-            <img class="select-manga" src="img/study.png">
-            <h1 class="mang">勉強</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="animegyagu.html" class="manga-text">
-            <img class="select-manga" src="img/warai.jpg">
-            <h1 class="mang">ギャグ</h1>
-          </a><br>
-        </div> 
-        <div class="items">
-          <a href="animefuture.html" class="manga-text">
-            <img class="select-manga" src="img/mirai.jpg">
-            <h1 class="mang">近未来</h1>
-          </a><br>
-        </div>
-        <div class="items">
-          <a href="animecook.html" class="manga-text">
-            <img class="select-manga" src="img/cook.png">
-            <h1 class="mang">料理</h1>
-          </a><br>
-        </div> 
-        <div class="items">
-          <a href="animeaidol.html"" class="manga-text">
-            <img class="select-manga" src="img/otaku.png">
-            <h1 class="mang">アイドル</h1>
-          </a><br>
-        </div>
-
-        <ons-button class="select btn" id="pop-button">戻る</ons-button>
-        <ons-button id="push-button">アニメ一覧へ</ons-button>
+        <ons-button class="select btn" id="pop-button"></ons-button>
+        <ons-button id="push-button"></ons-button>
        
       </div>
       </div>
@@ -386,7 +321,7 @@
               <!-- <th>ボタン</th> -->
             </tr>
           </thead>
-          <tbody id="tb" style="font-size:25px;">
+          <tbody id="tble" style="font-size:25px;">
           </tbody>
         </table>
 

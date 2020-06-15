@@ -15,54 +15,38 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-    // Page init event
-    // document.addEventListener('init', function(event) {
-      // var page = event.target;
-
-    //   if (page.matches('#first-page')) {
-
-    //     page.querySelector('#push-button').onclick = function() {
-    //       document.querySelector('#navigator').pushPage('page2.html');
-    //     };
-
-    //   } else if (page.matches('#second-page')) {
-
-    //     page.querySelector('#pop-button').onclick = function() {
-    //       document.querySelector('#navigator').popPage();
-    //     };
-
-    //   } 
-    // });
-
-    // if (ons.platform.isIPhoneX()) {
-    //   document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-    //   document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-    // }
-    // }
-
-  // for(let i = 0; i < mangas.length; i++){
-    //       console.log(mangas[i].id + '=' + mangas[i].title);
     window.onload = function() {
-      for (var i=0; i < mangas.length; i++) {
-        var _key = mangas[i].id;
-        var title = mangas[i].title;
-        var tr = document.createElement("tr");
-        var td1 = document.createElement("td");
-        var td2 = document.createElement("td");
-        td1.textContent = mangas[i].id;
-        td2.textContent = mangas[i].title;
-        
-        var tb = document.getElementById("tbl");
-        tb.appendChild(tr);
-        tr.appendChild(td1);
-        tr.appendChild(td2)
+      for (var i=0; i < 11; i++) {
+        if(i === 8 || i === 9){
+          continue;
+        }
+        var div = document.createElement("div");
+        var a = document.createElement("a");
+        var img = document.createElement("img");
+        var h = document.createElement("h1");
+        div.classList.add("items");
+        a.classList.add("manga-text");
+        img.classList.add("select-manga");
+        h.classList.add("mang");
+        a.href = genre[i].ahref;
+        img.src = genre[i].src;
+        h.textContent = genre[i].genr;
+        var gnl = document.getElementById("gnl");
+        gnl.appendChild(div);
+        div.appendChild(a);
+        a.appendChild(img);
+        a.appendChild(h);
+        if(i === 10){
+          var top = document.createElement("a");
+          top.classList.add("tophe");
+          top.textContent = "TOPへ";
+          top.href = "index.html";
+          gnl.appendChild(top);
+        }
+
       }
     };
-  // }
-
-    //     for(let i = 0; i < animes.length; i++){
-    //       console.log(animes[i].id + '=' + animes[i].title);
-    //     }
+    
   </script>
 </head>
 <body>
@@ -74,25 +58,14 @@
         <div class="center">勉強アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめの勉強アニメは…</p>
-        <h1>「Dr.STONE」</h1>
-        <p>です！！</p>
+      <div class="content" id="gnl" style="text-align: center">
+        <p class="genretext">気になるカテゴリを一つ選んでね</p>
         
-        <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
-          <thead>
-            <tr>
-              <th style="width:40%">ジャンル</th>
-              <th style="width:60%;">タイトル</th>
-              <!-- <th>ボタン</th> -->
-            </tr>
-          </thead>
-          <tbody id="tbl" style="font-size:25px;">
-          </tbody>
-        </table>
-
-
-        <a href="index.html"class="tophe">TOPへ</a>
+        <!-- <a href="index.html"class="tophe">TOPへ</a> -->
+      </div>
+      <div>
       </div>
     </ons-page>
   </ons-template>
+</body>
+</html>  

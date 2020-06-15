@@ -19,7 +19,7 @@
   
  
   // window.onload = function() {
-    document.addEventListener('init', function(event) {
+  document.addEventListener('init', function(event) {
 
     document.querySelectorAll('.hosikun').forEach((element) => {  
       //前回の時点でお気に入りに登録したものを読み込む。（星を黄色にする）
