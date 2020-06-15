@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="sakuhin.js"></script>
+  <script src="hoshi.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -15,9 +16,10 @@
 
   <script>
     // Page init event
+   
     document.addEventListener('init', function(event) {
       var page = event.target;
-
+      
       if (page.matches('#first-page')) { //1ページ目の操作
 
         //漫画かアニメか選ぶボタンへ進む
@@ -57,7 +59,22 @@
 
       } else if (page.matches('#four-page')) {
         //漫画一覧page
-        
+        // window.onload = function() {
+          for (var i=0; i < mangas.length; i++) {
+            var _key = mangas[i].id;
+            var title = mangas[i].title;
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            td1.textContent = mangas[i].id;
+            td2.textContent = mangas[i].title;
+            
+            var tbl = document.getElementById("tbl");
+            tbl.appendChild(tr);
+            tr.appendChild(td1);
+            tr.appendChild(td2)
+          }
+        // };
         
 
         
@@ -79,6 +96,20 @@
         };
       } else if (page.matches('#six-page')) {
         //アニメ一覧page
+        for (var i=0; i < animes.length; i++) {
+          var _key = animes[i].id;
+          var title = animes[i].title;
+          var tr = document.createElement("tr");
+          var td1 = document.createElement("td");
+          var td2 = document.createElement("td");
+          td1.textContent = animes[i].id;
+          td2.textContent = animes[i].title;
+          
+          var tb = document.getElementById("tb");
+          tb.appendChild(tr);
+          tr.appendChild(td1);
+          tr.appendChild(td2)
+        }
         //漫画かアニメ選択へ
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -86,6 +117,7 @@
 
       }
     });
+
 
     if (ons.platform.isIPhoneX()) {
       document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
@@ -236,104 +268,17 @@
         <p class="selected">漫画一覧</p>
 
 <!-- 漫画の一覧の図 -->
-         <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
-          <thead>
-            <tr>
-              <th width="40%">カテゴリ</th>
-              <th width="60%">タイトル</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>恋愛</td>
-              <td>サレタガワのブルー</td><br>
-            </tr>
-            <tr>
-              <td>恋愛</td>
-              <td>掃除の妖精におまかせ！</td>
-            </tr>
-            <tr>
-              <td>恋愛</td>
-              <td>パンプキンタイム</td>
-            </tr>
-            <tr>
-              <td>恋愛</td>
-              <td>ワンダフルデイズ</td> 
-            </tr>
-            <tr>
-              <td>冒険</td>
-              <td>約束のネバーランド</td> 
-            </tr>
-            <tr>
-              <td>冒険</td>
-              <td>HUNTER × HUNTER</td> 
-            </tr>
-            <tr>
-              <td>戦闘</td>
-              <td>七つの大罪</td> 
-            </tr>
-            <tr>
-              <td>戦闘</td>
-              <td>結界師</td> 
-            </tr>
-            <tr>
-              <td>学園</td>
-              <td>外見至上主義</td> 
-            </tr>
-            <tr>
-              <td>学園</td>
-              <td>傷だらけの悪魔</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(野球)</td>
-              <td> H2</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(野球)</td>
-              <td>バトルスタディーズ</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(バレー)</td>
-              <td>神様バレー</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(バレー)</td>
-              <td>ハリガネサービス</td> 
-            </tr>
-            <tr>
-              <td>ギャグ</td>
-              <td>荒川アンダーザ<br>ブリッジ</td> 
-            </tr>
-            <tr>
-              <td>ギャグ</td>
-              <td>ブラックナイト<br>パレード</td> 
-            </tr>
-            <tr>
-              <td>勉強</td>
-              <td>コウノドリ</td> 
-            </tr>
-            <tr>
-              <td>勉強</td>
-              <td>はたらく細胞</td> 
-            </tr>
-            <tr>
-              <td>塔を上る</td>
-              <td>リセットゲーム</td> 
-            </tr>
-            <tr>
-              <td>塔を上る</td>
-              <td>神之塔</td> 
-            </tr>
-            <tr>
-              <td>料理</td>
-              <td>パパと親父のウチのご飯</td> 
-            </tr>
-            <tr>
-              <td>アイドル</td>
-              <td>AKB49</td> 
-            </tr>
-          </tbody>
-        </table>
+      <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
+        <thead>
+          <tr>
+            <th style="width:40%">ジャンル</th>
+            <th style="width:60%;">タイトル</th>
+            <!-- <th>ボタン</th> -->
+          </tr>
+        </thead>
+        <tbody id="tbl" style="font-size:25px;">
+        </tbody>
+      </table>
 
         <ons-button class="itiran btn" id="pop-button" style="margin-top:20px;">セレクト画面へ</ons-button>
 
@@ -422,7 +367,7 @@
 
 
    <!-- アニメ一覧画面 -->
-   <ons-template id="page6.html">
+  <ons-template id="page6.html">
     <ons-page id="six-page">
       <ons-toolbar>
         <div class="left"><ons-back-button>カテゴリへ</ons-back-button></div>
@@ -432,95 +377,21 @@
       <div class="content" style="text-align: center">
         
         <p class="selected">アニメ一覧</p>
-<!-- アニメ一覧 -->
-        <table border="3" bordercolor="blue" bgcolor="skyblue"  width="90%" height="200"style="margin:0 auto;">
+        <!-- アニメ一覧 -->
+        <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
           <thead>
             <tr>
-              <th width="40%" >カテゴリ</th>
-              <th width="60%">タイトル</th>
+              <th style="width:40%">ジャンル</th>
+              <th style="width:60%;">タイトル</th>
+              <!-- <th>ボタン</th> -->
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>恋愛</td>
-              <td>四月は君の嘘</td><br>
-            </tr>
-            <tr>
-              <td>恋愛</td>
-              <td>ヲタクに恋は難しい</td>
-            </tr>
-            <tr>
-              <td>恋愛</td>
-              <td>恋と嘘</td>
-            </tr>
-            <tr>
-              <td>冒険</td>
-              <td>Re:ゼロから始める<br>異世界生活</td> 
-            </tr>
-            <tr>
-              <td>冒険</td>
-              <td>甲鉄城のカバネリ</td> 
-            </tr>
-            <tr>
-              <td>戦闘</td>
-              <td>ソードアート<br>オンライン</td> 
-            </tr>
-            <tr>
-              <td>戦闘</td>
-              <td>犬夜叉</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(野球)</td>
-              <td>メジャー2nd</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(野球)</td>
-              <td>ダイヤのA</td> 
-            </tr>
-            <tr>
-              <td>スポーツ<br>(バレー)</td>
-              <td>ハイキュー</td> 
-            </tr>
-            <tr>
-              <td>ギャグ</td>
-              <td>ぐらんぶる</td> 
-            </tr>
-            <tr>
-              <td>ギャグ</td>
-              <td>ボボボーボ・<br>ボーボボ</td> 
-            </tr>
-            <tr>
-              <td>勉強</td>
-              <td>Dr.STONE</td> 
-            </tr>
-            <tr>
-              <td>近未来</td>
-              <td>PSYCHO-PASS <br>サイコパス</td> 
-            </tr>
-            <tr>
-              <td>近未来</td>
-              <td>電脳コイル</td> 
-            </tr>
-            <tr>
-              <td>料理</td>
-              <td>真・中華一番</td> 
-            </tr>
-            <tr>
-              <td>料理</td>
-              <td>たくのみ</td> 
-            </tr>
-            <tr>
-              <td>アイドル</td>
-              <td>推しが武道館いってくれたら死ぬ</td> 
-            </tr>
+          <tbody id="tb" style="font-size:25px;">
           </tbody>
         </table>
 
         <ons-button class="itiran btn" id="pop-button" style="margin-top:20px;">セレクト画面へ</ons-button>
-
-        
-      </div>
-      </div>
+      </div>  
     </ons-page>
   </ons-template>
 </body>

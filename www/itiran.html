@@ -42,28 +42,22 @@
 
   // for(let i = 0; i < mangas.length; i++){
     //       console.log(mangas[i].id + '=' + mangas[i].title);
-    for (let i=0; i < mangas.length; i++) {
-      var _key = mangas[i].id;
-      var title = mangas[i].title;
-      var tr = document.createElement("tr");
-      var td1 = document.createElement("td");
-      var td2 = document.createElement("td");
-      td1.textContent = mangas[i].id;
-      td2.textContent = mangas[i].title;
-      console.log(td1);
-      console.log(td2);
-      
-      // var td3 = document.createElement("td");
-      const tb = document.querySelectorAll(tbody);
-      document.tb.appendChild(tr);
-      document.tr.appendChild(td1);
-      document.tr.appendChild(td2)
-      // tr.appendChild(td3);
-      // td1.innerHTML = _key;お気に入りでは使用
-      // td2.innerHTML = localStorage.getItem(_key);
-      //キーの部分↑
-      // td3.innerHTML = '<input type="button" onclick="removeStorage(\'' + _key + '\')" value="削除">';
-    }
+    window.onload = function() {
+      for (var i=0; i < mangas.length; i++) {
+        var _key = mangas[i].id;
+        var title = mangas[i].title;
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        td1.textContent = mangas[i].id;
+        td2.textContent = mangas[i].title;
+        
+        var tb = document.getElementById("tbl");
+        tb.appendChild(tr);
+        tr.appendChild(td1);
+        tr.appendChild(td2)
+      }
+    };
   // }
 
     //     for(let i = 0; i < animes.length; i++){
@@ -85,15 +79,15 @@
         <h1>「Dr.STONE」</h1>
         <p>です！！</p>
         
-        <table style="width: 98%; margin:0 auto;border:3px solid rgb(253, 55, 55); background-color:rgb(248, 156, 81);height:200;">
+        <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
           <thead>
             <tr>
-              <th style="font-size:25px;margin:0 auto;color:white;">ジャンル</th>
-              <th style="font-size:25px;color:white;">タイトル</th>
+              <th style="width:40%">ジャンル</th>
+              <th style="width:60%;">タイトル</th>
               <!-- <th>ボタン</th> -->
             </tr>
           </thead>
-          <tbody  style="font-size:25px;">
+          <tbody id="tbl" style="font-size:25px;">
           </tbody>
         </table>
 
