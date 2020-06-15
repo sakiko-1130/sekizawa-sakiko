@@ -55,7 +55,7 @@
       {'chref' : "comiccook.html" , 'ahref' : "animecook.html" , 'genr' : "料理" , 'src' : "img/cook.png"},
       {'chref' : "comicaidl.html" , 'ahref' : "animeaidol.html" , 'genr' : "アイドル" , 'src' : "img/aidl.jpg"},
       {'chref' : "comictou.html" , 'genr' : "塔を上る" , 'src' : "img/kaidann.jpg"},
-      {'chref' : "comecgakuen.html" , 'genr' : "学園" , 'src' : "img/gakkou.jpg"},
+      {'chref' : "comicgakuen.html" , 'genr' : "学園" , 'src' : "img/gakkou.jpg"},
       {'ahref' : "animefuture.html" , 'genr' : "近未来" , 'src' : "img/mirai.jpg"},
    ];
 
