@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    // document.addEventListener('init', function(event) {
+      // var page = event.target;
+
+    //   if (page.matches('#first-page')) {
+
+    //     page.querySelector('#push-button').onclick = function() {
+    //       document.querySelector('#navigator').pushPage('page2.html');
+    //     };
+
+    //   } else if (page.matches('#second-page')) {
+
+    //     page.querySelector('#pop-button').onclick = function() {
+    //       document.querySelector('#navigator').popPage();
+    //     };
+
+    //   } 
+    // });
+
+    // if (ons.platform.isIPhoneX()) {
+    //   document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+    //   document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    // }
+    // }
+
+  // for(let i = 0; i < mangas.length; i++){
+    //       console.log(mangas[i].id + '=' + mangas[i].title);
+    for (let i=0; i < mangas.length; i++) {
+      var _key = mangas[i].id;
+      var title = mangas[i].title;
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      var td2 = document.createElement("td");
+      td1.textContent = mangas[i].id;
+      td2.textContent = mangas[i].title;
+      console.log(td1);
+      console.log(td2);
+      
+      // var td3 = document.createElement("td");
+      const tb = document.querySelectorAll(tbody);
+      document.tb.appendChild(tr);
+      document.tr.appendChild(td1);
+      document.tr.appendChild(td2)
+      // tr.appendChild(td3);
+      // td1.innerHTML = _key;お気に入りでは使用
+      // td2.innerHTML = localStorage.getItem(_key);
+      //キーの部分↑
+      // td3.innerHTML = '<input type="button" onclick="removeStorage(\'' + _key + '\')" value="削除">';
+    }
+  // }
+
+    //     for(let i = 0; i < animes.length; i++){
+    //       console.log(animes[i].id + '=' + animes[i].title);
+    //     }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar>
+        <div class="center">勉強アニメ</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>あなたにおすすめの勉強アニメは…</p>
+        <h1>「Dr.STONE」</h1>
+        <p>です！！</p>
+        
+        <table style="width: 98%; margin:0 auto;border:3px solid rgb(253, 55, 55); background-color:rgb(248, 156, 81);height:200;">
+          <thead>
+            <tr>
+              <th style="font-size:25px;margin:0 auto;color:white;">ジャンル</th>
+              <th style="font-size:25px;color:white;">タイトル</th>
+              <!-- <th>ボタン</th> -->
+            </tr>
+          </thead>
+          <tbody  style="font-size:25px;">
+          </tbody>
+        </table>
+
+
+        <a href="index.html"class="tophe">TOPへ</a>
+      </div>
+    </ons-page>
+  </ons-template>
