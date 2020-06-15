@@ -81,8 +81,6 @@
           document.querySelector('#navigator').pushPage('page4.html');
         };
 
-
-
       } else if (page.matches('#four-page')) {
         //漫画一覧page
         for (var i=0; i < mangas.length; i++) {
@@ -93,23 +91,18 @@
           var td2 = document.createElement("td");
           td1.textContent = mangas[i].id;
           td2.textContent = mangas[i].title;
-          
           var tbl = document.getElementById("tbl");
           tbl.appendChild(tr);
           tr.appendChild(td1);
           tr.appendChild(td2)
         }
-          
-          //漫画かアニメ選択へ
+        //漫画かアニメ選択へ
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
         };
           
-          
-          
       } else if (page.matches('#five-page')) {//アニメカテゴリpage
-        
-        
+        //カテゴリ表示 
         for (var i=0; i < 11; i++) {
           if(i === 8 || i === 9){
             continue;
@@ -147,6 +140,7 @@
         page.querySelector('#push-button').onclick = function() {
           document.querySelector('#navigator').pushPage('page6.html');
         };
+
       } else if (page.matches('#six-page')) {
         //アニメ一覧page
         for (var i=0; i < animes.length; i++) {
@@ -167,10 +161,8 @@
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
         };
-
       }
     });
-
 
     if (ons.platform.isIPhoneX()) {
       document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
@@ -180,7 +172,7 @@
 </head>
 <body>
   <ons-navigator id="navigator" page="page1.html"></ons-navigator>
-
+<!-- -----------------トップ画面-Page.1----------------- -->
   <ons-template id="page1.html">
     <ons-page id="first-page">
       <div class="page__background" style="background-image:url('img/top.jpg'); background-size:cover;margin:0 auto;"></div>
@@ -196,6 +188,7 @@
     </ons-page>
   </ons-template>
 
+<!-- ----------------アニメか漫画か-Page.2----------------- -->
   <ons-template id="page2.html">
     <ons-page id="second-page">
       <ons-toolbar>
@@ -204,7 +197,6 @@
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
-        
         <p class="selectone">漫画かアニメどちらにしますか？</p>
 
         <div class="select-one">
@@ -216,16 +208,13 @@
           <ons-button id="push-4button"class="kategori">アニメカテゴリへ</ons-button>
         </div>
         <a href="okiniitiran.html" class="okinis">お気に入り一覧へ</a>
-
         <!-- <ons-button class="select btn" id="pop-button">Pop page</ons-button> -->
       </div>
       </div>
     </ons-page>
   </ons-template>
 
-
-
-  <!-- 漫画のカテゴリpage -->
+  <!-- --------------漫画のカテゴリ-Page.3-------------- -->
   <ons-template id="page3.html">
     <ons-page id="third-page">
       <ons-toolbar>
@@ -235,14 +224,13 @@
 
       <div class="content" id="cgenre" style="text-align: center">
         <p class="genretext">気になるカテゴリを一つ選んでね</p>
-        <ons-button class="select btn" id="pop-button">戻る</ons-button>
-        <ons-button id="push-button">漫画一覧へ</ons-button>
+        <ons-button class="select btn" id="pop-button" class="kate">&lt; 戻る</ons-button>
+        <ons-button id="push-button" class="kate">漫画一覧へ &gt;</ons-button>
       </div>
     </ons-page>
   </ons-template>
 
-
-<!-- 漫画一覧画面 -->
+  <!-- -----------------漫画一覧画面-Page.4-------------- -->
   <ons-template id="page4.html">
     <ons-page id="four-page">
       <ons-toolbar>
@@ -251,16 +239,14 @@
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
-        
         <p class="selected">漫画一覧</p>
 
-       <!-- 漫画の一覧の表 -->
+        <!-- 漫画の一覧の表 -->
         <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
           <thead>
             <tr>
               <th style="width:40%">ジャンル</th>
               <th style="width:60%;">タイトル</th>
-              <!-- <th>ボタン</th> -->
             </tr>
           </thead>
           <tbody id="tbl" style="font-size:25px;">
@@ -273,9 +259,7 @@
     </ons-page>
   </ons-template>
 
-
-
-  <!-- アニメカテゴリ -->
+  <!-- -------------アニメのカテゴリ-Page.5-------------- -->
   <ons-template id="page5.html">
     <ons-page id="five-page">
       <ons-toolbar>
@@ -285,14 +269,13 @@
 
       <div class="content" id="agenre" style="text-align: center">
         <p class="genretext">ジャンルを一つ選んでね</p>
-        <ons-button class="select btn" id="pop-button">戻る</ons-button>
-        <ons-button id="push-button">アニメ一覧へ</ons-button>
+        <ons-button class="select btn" id="pop-button" class="kate">&lt; 戻る</ons-button>
+        <ons-button id="push-button" class="kate">アニメ一覧へ &gt;</ons-button>
       </div>
     </ons-page>
   </ons-template>
 
-
-   <!-- アニメ一覧画面 -->
+   <!-- -------------アニメ一覧画面-Page.6---------------- -->
   <ons-template id="page6.html">
     <ons-page id="six-page">
       <ons-toolbar>
@@ -303,13 +286,12 @@
       <div class="content" style="text-align: center">
         
         <p class="selected">アニメ一覧</p>
-        <!-- アニメ一覧 -->
+        <!-- アニメ一覧の表 -->
         <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
           <thead>
             <tr>
               <th style="width:40%">ジャンル</th>
               <th style="width:60%;">タイトル</th>
-              <!-- <th>ボタン</th> -->
             </tr>
           </thead>
           <tbody id="tble" style="font-size:25px;">

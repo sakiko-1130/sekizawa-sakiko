@@ -57,8 +57,6 @@
   font-size:20px;
 }
 
-/* .kategori {
-} */
 /* 共通ボタン */
 .idou{
   text-decoration: none;
@@ -108,6 +106,10 @@ div.page__background {
 h1 {
   color:rgb(42, 238, 3);
   text-shadow:1px 1px 0 rgb(184, 181, 181);
+}
+
+.kate{
+  width:140px;
 }
 /* お気に入りボタン */
 .hosikun {
