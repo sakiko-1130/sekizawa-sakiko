@@ -15,10 +15,17 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-
+    
     window.onload = function() {
-      stone.getSetText();
+      var stoneHTMLs = stone.getSetText();
+      var box1 = document.querySelector("#first-page .text");
+        box1.appendChild(stoneHTMLs.osusume);
+        box1.appendChild(stoneHTMLs.daimei);
+        box1.appendChild(stoneHTMLs.desu);
+        box1.appendChild(stoneHTMLs.shashin);
+        box1.appendChild(stoneHTMLs.kansou);
     };
+    
   </script>
 </head>
 <body>

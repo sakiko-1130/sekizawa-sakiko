@@ -85,8 +85,14 @@
       }
 
    }
-   var stone = new Sakuhin("アニメ", animes[12].id, animes[12].title, "img/animes/ishi.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
    
+   // 漫画
+
+   // アニメ
+
+   // 勉強
+   var stone = new Sakuhin("アニメ", animes[12].id, animes[12].title, "img/animes/ishi.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
+   // 冒険
    var rezero = new Sakuhin("アニメ", animes[3].id, animes[3].title, "img/animes/reze.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
 
    var kabaneri = new Sakuhin("アニメ", animes[4].id, animes[4].title, "img/animes/kabaneri.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
