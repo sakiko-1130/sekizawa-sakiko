@@ -4,14 +4,14 @@
   width:150px;
   border-radius:20px;
   box-shadow:0 7px 0 rgb(0, 108, 248);
-  margin-top:180px;
+  margin-top:140px;
 }
 
 .start:active {
   width:150px;
   border-radius:20px;
   box-shadow:0 3px 0 rgb(52, 140, 255);
-  margin-top:184px;
+  margin-top:144px;
 }
 
 
@@ -19,17 +19,15 @@
   text-align:left;
   font-weight:bold;
   font-size:36px;
-  color:rgb(148, 148, 148);
-  margin-top:130px;
-  margin-left:32px;
+  color:rgb(90, 150, 218);
+  margin-top:170px;
   margin-bottom:0;
 }
 .right-text {/* タイトルテキスト */
   text-align:right;
   font-weight:bold;
   font-size:36px;
-  color:rgb(148, 148, 148);
-  margin-right:32px;
+  color:rgb(90, 150, 218);
 }
 
 .center {/* ヘッダーの文字 */

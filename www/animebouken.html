@@ -21,7 +21,14 @@
 
       if (page.matches('#first-page')) {
 
-        rezero.getSetText();
+        var rezeroHTMLs = rezero.getSetText();
+        var box1 = document.querySelector("#first-page .text");
+         box1.appendChild(rezeroHTMLs.osusume);
+         box1.appendChild(rezeroHTMLs.daimei);
+         box1.appendChild(rezeroHTMLs.desu);
+         box1.appendChild(rezeroHTMLs.shashin);
+         box1.appendChild(rezeroHTMLs.kansou);
+
 
         page.querySelector('#push-button').onclick = function() {
           document.querySelector('#navigator').pushPage('page2.html');
@@ -29,7 +36,13 @@
 
       } else if (page.matches('#second-page')) {
 
-        kabaneri.getSetText();
+        var kabaneriHTMLs = kabaneri.getSetText();
+        var box2 = document.querySelector("#second-page .text");
+         box2.appendChild(kabaneriHTMLs.osusume);
+         box2.appendChild(kabaneriHTMLs.daimei);
+         box2.appendChild(kabaneriHTMLs.desu);
+         box2.appendChild(kabaneriHTMLs.shashin);
+         box2.appendChild(kabaneriHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
