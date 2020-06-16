@@ -15,38 +15,12 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-    window.onload = function() {
-      for (var i=0; i < 11; i++) {
-        if(i === 8 || i === 9){
-          continue;
-        }
-        var div = document.createElement("div");
-        var a = document.createElement("a");
-        var img = document.createElement("img");
-        var h = document.createElement("h1");
-        div.classList.add("items");
-        a.classList.add("manga-text");
-        img.classList.add("select-manga");
-        h.classList.add("mang");
-        a.href = genre[i].ahref;
-        img.src = genre[i].src;
-        h.textContent = genre[i].genr;
-        var gnl = document.getElementById("gnl");
-        gnl.appendChild(div);
-        div.appendChild(a);
-        a.appendChild(img);
-        a.appendChild(h);
-        if(i === 10){
-          var top = document.createElement("a");
-          top.classList.add("tophe");
-          top.textContent = "TOPへ";
-          top.href = "index.html";
-          gnl.appendChild(top);
-        }
-
-      }
-    };
+    // var stone = new Sakuhin(animes[12].id, animes[12].title, "img/animes/ishi.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
     
+    window.onload = function() {
+      stone.getSetText();
+    };
+  
   </script>
 </head>
 <body>
@@ -57,13 +31,13 @@
       <ons-toolbar>
         <div class="center">勉強アニメ</div>
       </ons-toolbar>
-
-      <div class="content" id="gnl" style="text-align: center">
-        <p class="genretext">気になるカテゴリを一つ選んでね</p>
-        
-        <!-- <a href="index.html"class="tophe">TOPへ</a> -->
-      </div>
-      <div>
+      <div style="text-align: center">
+        <div class="content box">
+          
+        </div>
+          <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="Dr.STONE<br>(アニメ,勉強)" class="hosikun"><br>
+          <a href="https://dr-stone.jp/"class="sarani"style="margin-bottom:10px;">気になる</a>
+          <a href="index.html"class="tophe" style="margin-top:0px;">TOPへ</a>
       </div>
     </ons-page>
   </ons-template>

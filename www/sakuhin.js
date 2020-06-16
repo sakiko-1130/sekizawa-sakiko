@@ -59,5 +59,61 @@
       {'ahref' : "animefuture.html" , 'genr' : "近未来" , 'src' : "img/mirai.jpg"},
    ];
 
+   class Sakuhin {
+      constructor(am, id, title, src, text){
+        this.am = am;
+        this.id = id;
+        this.title = title;
+        this.src = src;
+        this.text = text;
+      }
+
+      getSetText(){
+         var osusume = document.createElement("p");      
+         var daimei = document.createElement("h1");      
+         var desu = document.createElement("p");      
+         var shashin = document.createElement("img");      
+         var kansou = document.createElement("p");
+         osusume.textContent = `あなたにおすすめの${this.id}${this.am}は…` ;
+         daimei.textContent = `「${this.title}」`;
+         desu.textContent = "です！！"
+         shashin.src = this.src;
+         shashin.classList.add("animes-img");
+         kansou.textContent = this.text;
+         kansou.classList.add("anime-text");
+         var box = document.querySelector(".text");
+         box.appendChild(osusume);
+         box.appendChild(daimei);
+         box.appendChild(desu);
+         box.appendChild(shashin);
+         box.appendChild(kansou);
+      }
+
+      getSetBox(){
+         var osusume = document.createElement("p");      
+         var daimei = document.createElement("h1");      
+         var desu = document.createElement("p");      
+         var shashin = document.createElement("img");      
+         var kansou = document.createElement("p");
+         osusume.textContent = `あなたにおすすめの${this.id}${this.am}は…` ;
+         daimei.textContent = `「${this.title}」`;
+         desu.textContent = "です！！"
+         shashin.src = this.src;
+         shashin.classList.add("animes-img");
+         kansou.textContent = this.text;
+         kansou.classList.add("anime-text");
+         var box = document.querySelector(".box");
+         box.appendChild(osusume);
+         box.appendChild(daimei);
+         box.appendChild(desu);
+         box.appendChild(shashin);
+         box.appendChild(kansou);
+      }
+
+   }
+   var stone = new Sakuhin("アニメ", animes[12].id, animes[12].title, "img/animes/ishi.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
    
+   var rezero = new Sakuhin("アニメ", animes[3].id, animes[3].title, "img/animes/reze.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
+
+   var kabaneri = new Sakuhin("アニメ", animes[4].id, animes[4].title, "img/animes/kabaneri.jpg","とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。");
 }
