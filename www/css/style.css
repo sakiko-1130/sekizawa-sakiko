@@ -3,15 +3,15 @@
 .start { /* 暇だボタン */
   width:150px;
   border-radius:20px;
-  box-shadow:0 7px 0 rgb(0, 110, 255);
-  margin-top:300px;
+  box-shadow:0 7px 0 rgb(0, 108, 248);
+  margin-top:180px;
 }
 
 .start:active {
   width:150px;
   border-radius:20px;
-  box-shadow:0 3px 0 rgb(0, 110, 255);
-  margin-top:304px;
+  box-shadow:0 3px 0 rgb(52, 140, 255);
+  margin-top:184px;
 }
 
 
@@ -19,8 +19,8 @@
   text-align:left;
   font-weight:bold;
   font-size:36px;
-  color:rgb(182,209,209);
-  margin-top:50px;
+  color:rgb(148, 148, 148);
+  margin-top:130px;
   margin-left:32px;
   margin-bottom:0;
 }
@@ -28,7 +28,7 @@
   text-align:right;
   font-weight:bold;
   font-size:36px;
-  color:rgb(182,209,209);
+  color:rgb(148, 148, 148);
   margin-right:32px;
 }
 
@@ -81,6 +81,11 @@
   margin:0 auto;
 }
 
+.sarani {
+  /* display:block; */
+  margin-bottom:10px;
+}
+
 .okinis {
   width:150px;
 }
@@ -91,11 +96,16 @@
 
 .tophe {
   background-color:red;
-  margin-top:20px;
+  margin-top:10px;
 }
 
 div.page__background {
   background-color:rgb(206, 241, 255);
+}
+
+.kate {
+  background-color:rgb(206, 241, 255);
+  color:#0076FF;
 }
 
 .itiran {
