@@ -7,6 +7,8 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
+
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
@@ -14,17 +16,37 @@
   
   <script>
 
+    let kimiuso = new Sakuhin("アニメ", animes[0].id, animes[0].title,"img/animes/sigatu.jpg", animes[0].text);
+    let otakoi = new Sakuhin("アニメ", animes[1].id, animes[1].title,"img/animes/otakoi.jpg", animes[1].text);
+    let koiuso = new Sakuhin("アニメ", animes[2].id, animes[2].title,"img/animes/koiuso.jpg", animes[2].text);
+    
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
 
       if (page.matches('#first-page')) {
 
+        var kimiusoHTMLs = kimiuso.getSetText();
+        var box1 = document.querySelector("#first-page .text");
+         box1.appendChild(kimiusoHTMLs.osusume);
+         box1.appendChild(kimiusoHTMLs.daimei);
+         box1.appendChild(kimiusoHTMLs.desu);
+         box1.appendChild(kimiusoHTMLs.shashin);
+         box1.appendChild(kimiusoHTMLs.kansou);
+
         page.querySelector('#push-button').onclick = function() {
           document.querySelector('#navigator').pushPage('page2.html');
         };
 
       } else if (page.matches('#second-page')) {
+
+        var otakoiHTMLs = otakoi.getSetText();
+        var box2 = document.querySelector("#second-page .text");
+         box2.appendChild(otakoiHTMLs.osusume);
+         box2.appendChild(otakoiHTMLs.daimei);
+         box2.appendChild(otakoiHTMLs.desu);
+         box2.appendChild(otakoiHTMLs.shashin);
+         box2.appendChild(otakoiHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -35,6 +57,14 @@
         };
 
       } else if (page.matches('#third-page')) {
+
+        var koiusoHTMLs = koiuso.getSetText();
+        var box3 = document.querySelector("#third-page .text");
+         box3.appendChild(koiusoHTMLs.osusume);
+         box3.appendChild(koiusoHTMLs.daimei);
+         box3.appendChild(koiusoHTMLs.desu);
+         box3.appendChild(koiusoHTMLs.shashin);
+         box3.appendChild(koiusoHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -57,18 +87,11 @@
         <div class="center">恋愛アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p id="oni">あなたにおすすめの恋愛アニメは…</p>
-        <h1>「四月は君の嘘」</h1>
-        <p>です！！</p>
-        <img src="img/animes/sigatu.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
-        <div>
-          <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="四月は君の嘘<br>(アニメ,恋愛)" class="hosikun"><br>
-          <a href="https://www.kimiuso.jp/sp" class="sarani">気になる</a>
+      <div style="text-align:center;">
+        <div class="content text">
         </div>
-      
-          
+        <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="四月は君の嘘<br>(アニメ,恋愛)" class="hosikun"><br>
+        <a href="https://www.kimiuso.jp/sp" class="sarani">気になる</a>
         <ons-button id="push-button">次の作品へ</ons-button>
         <a href="index.html"class="tophe">TOPへ</a>
       </div>
@@ -82,16 +105,11 @@
         <div class="center">恋愛アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>続いての恋愛アニメは…</p>
-        <h1>「ヲタクに恋は難しい」</h1>
-        <p>です！！</p>
-        <img src="img/animes/otakoi.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
-        <div>
-          <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="ヲタクに恋は難しい<br>(アニメ,恋愛)" class="hosikun"><br>
-          <a href="https://wotakoi-anime.com/" class="sarani">気になる</a>
+      <div style="text-align: center">
+        <div class="content text">
         </div>
+        <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="ヲタクに恋は難しい<br>(アニメ,恋愛)" class="hosikun"><br>
+        <a href="https://wotakoi-anime.com/" class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button>
         <ons-button id="push-button">次の作品へ</ons-button>
         <a href="index.html"class="tophe">TOPへ</a>
@@ -106,12 +124,9 @@
         <div class="center">恋愛アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>続いての恋愛アニメは…</p>
-        <h1>「恋と嘘」</h1>
-        <p>です！！</p>
-        <img src="img/animes/koiuso.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="恋と嘘<br>(アニメ,戦闘)" class="hosikun"><br>
         <a href="https://koiuso-anime.com/" class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button>

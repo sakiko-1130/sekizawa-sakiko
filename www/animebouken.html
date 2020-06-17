@@ -15,13 +15,16 @@
   <link rel="stylesheet" href="css/style.css">
   
   <script>
-    
+
+    let rezero = new Sakuhin("アニメ", animes[3].id, animes[3].title, "img/animes/reze.jpg",animes[3].text);
+    let kabaneri = new Sakuhin("アニメ", animes[4].id, animes[4].title, "img/animes/kabaneri.jpg",animes[4].text);
+
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
 
       if (page.matches('#first-page')) {
-
+        //Re:ゼロから始める異世界生活
         var rezeroHTMLs = rezero.getSetText();
         var box1 = document.querySelector("#first-page .text");
          box1.appendChild(rezeroHTMLs.osusume);
@@ -30,13 +33,12 @@
          box1.appendChild(rezeroHTMLs.shashin);
          box1.appendChild(rezeroHTMLs.kansou);
 
-
         page.querySelector('#push-button').onclick = function() {
           document.querySelector('#navigator').pushPage('page2.html');
         };
 
       } else if (page.matches('#second-page')) {
-
+        //甲鉄城のカバネリ
         var kabaneriHTMLs = kabaneri.getSetText();
         var box2 = document.querySelector("#second-page .text");
          box2.appendChild(kabaneriHTMLs.osusume);
@@ -48,10 +50,8 @@
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
         };
-
       } 
     });
-
 
     if (ons.platform.isIPhoneX()) {
       document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
@@ -70,11 +70,6 @@
 
       <div style="text-align: center">
         <div class="content text">
-          <!-- <p>あなたにおすすめの冒険アニメは…</p>
-          <h1>「Re:ゼロから始める異世界生活」</h1>
-          <p>です！！</p>
-          <img src="img/animes/reze.jpg" class="animes-img"><br>
-          <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p> -->
         </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="Re:ゼロから始める異世界生活<br>(アニメ,冒険)" class="hosikun"><br>
         <a href="http://re-zero-anime.jp/tv/"class="sarani">気になる</a>
@@ -93,11 +88,6 @@
 
       <div style="text-align: center">
         <div class="content text">
-          <!-- <p>続いての冒険アニメは…</p>
-          <h1>「甲鉄城のカバネリ」</h1>
-          <p>です！！</p>
-          <img src="img/animes/kabaneri.jpg" class="animes-img"><br>
-          <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p> -->
         </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="甲鉄城のカバネリ<br>(アニメ,冒険)" class="hosikun"><br>
         <a href="https://kabaneri.com/tv/"class="sarani">気になる</a>

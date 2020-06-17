@@ -15,8 +15,12 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-    
-    window.onload = function() {
+
+   var stone = new Sakuhin("アニメ", animes[12].id, animes[12].title, "img/animes/ishi.jpg",animes[12].text);
+   
+
+      document.addEventListener('init', function(event) {
+      //Dr.STONE
       var stoneHTMLs = stone.getSetText();
       var box1 = document.querySelector("#first-page .text");
         box1.appendChild(stoneHTMLs.osusume);
@@ -24,7 +28,7 @@
         box1.appendChild(stoneHTMLs.desu);
         box1.appendChild(stoneHTMLs.shashin);
         box1.appendChild(stoneHTMLs.kansou);
-    };
+    });
     
   </script>
 </head>
@@ -36,15 +40,10 @@
       <ons-toolbar>
         <div class="center">勉強アニメ</div>
       </ons-toolbar>
-      <div style="text-align: center">
 
+      <div style="text-align: center">
         <div class="content text">
         </div>
-        <!-- <p>あなたにおすすめの勉強アニメは…</p>
-        <h1>「Dr.STONE」</h1>
-        <p>です！！</p>
-        <img src="img/animes/ishi.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p> -->
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="Dr.STONE<br>(アニメ,勉強)" class="hosikun"><br>
         <a href="https://dr-stone.jp/"class="sarani"style="margin-bottom:10px;">気になる</a>
         <a href="index.html"class="tophe" style="margin-top:0px;">TOPへ</a>

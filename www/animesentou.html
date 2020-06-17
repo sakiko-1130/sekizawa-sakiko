@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -14,17 +15,37 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
+
+    let sao = new Sakuhin("アニメ", animes[5].id, animes[5].title,"img/animes/sao.jpg", animes[5].text);
+    let inuyasha = new Sakuhin("アニメ", animes[6].id, animes[6].title,"img/animes/inu.jpg", animes[6].text);
+
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
 
       if (page.matches('#first-page')) {
 
+        var saoHTMLs = sao.getSetText();
+        var box1 = document.querySelector("#first-page .text");
+         box1.appendChild(saoHTMLs.osusume);
+         box1.appendChild(saoHTMLs.daimei);
+         box1.appendChild(saoHTMLs.desu);
+         box1.appendChild(saoHTMLs.shashin);
+         box1.appendChild(saoHTMLs.kansou);
+
         page.querySelector('#push-button').onclick = function() {
           document.querySelector('#navigator').pushPage('page2.html');
         };
 
       } else if (page.matches('#second-page')) {
+
+        var inuyashaHTMLs = inuyasha.getSetText();
+        var box2 = document.querySelector("#second-page .text");
+         box2.appendChild(inuyashaHTMLs.osusume);
+         box2.appendChild(inuyashaHTMLs.daimei);
+         box2.appendChild(inuyashaHTMLs.desu);
+         box2.appendChild(inuyashaHTMLs.shashin);
+         box2.appendChild(inuyashaHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -48,12 +69,9 @@
         <div class="center">戦闘アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめの戦闘アニメは…</p>
-        <h1>「ソードアートオンライン」</h1>
-        <p>です！！</p>
-        <img src="img/animes/sao.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="ソードアートオンライン<br>(アニメ,戦闘)" class="hosikun"><br>
         <a href="https://www.swordart-online.net/"class="sarani">気になる</a>
         <ons-button id="push-button">次の作品へ</ons-button>
@@ -69,12 +87,9 @@
         <div class="center">戦闘アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>続いての戦闘アニメは…</p>
-        <h1>「犬夜叉」</h1>
-        <p>です！！</p>
-        <img src="img/animes/inu.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="犬夜叉<br>(アニメ,戦闘)" class="hosikun"><br>
         <a href="https://www.ytv.co.jp/inuyasha/"class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button><br>

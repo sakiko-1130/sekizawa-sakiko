@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -14,6 +15,11 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
+
+    let mejor = new Sakuhin("アニメ", animes[7].id, animes[7].title,"img/animes/meja.png", animes[7].text);
+    let daiya = new Sakuhin("アニメ", animes[8].id, animes[8].title,"img/animes/daia.jpg", animes[8].text);
+    let haikyu = new Sakuhin("アニメ", animes[9].id, animes[9].title,"img/animes/haikyu.jpg", animes[9].text);
+
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
@@ -29,6 +35,15 @@
         };
 
       } else if (page.matches('#second-page')) {//野球紹介
+
+        var mejorHTMLs = mejor.getSetText();
+        var box1 = document.querySelector("#second-page .text");
+         box1.appendChild(mejorHTMLs.osusume);
+         box1.appendChild(mejorHTMLs.daimei);
+         box1.appendChild(mejorHTMLs.desu);
+         box1.appendChild(mejorHTMLs.shashin);
+         box1.appendChild(mejorHTMLs.kansou);
+
         //戻る
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -40,10 +55,26 @@
 
       } else if (page.matches('#third-page')) {
 
+        var daiyaHTMLs = daiya.getSetText();
+        var box2 = document.querySelector("#third-page .text");
+         box2.appendChild(daiyaHTMLs.osusume);
+         box2.appendChild(daiyaHTMLs.daimei);
+         box2.appendChild(daiyaHTMLs.desu);
+         box2.appendChild(daiyaHTMLs.shashin);
+         box2.appendChild(daiyaHTMLs.kansou);
+
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
         };
       } else if (page.matches('#four-page')) {
+
+        var haikyuHTMLs = haikyu.getSetText();
+        var box3 = document.querySelector("#four-page .text");
+         box3.appendChild(haikyuHTMLs.osusume);
+         box3.appendChild(haikyuHTMLs.daimei);
+         box3.appendChild(haikyuHTMLs.desu);
+         box3.appendChild(haikyuHTMLs.shashin);
+         box3.appendChild(haikyuHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -82,12 +113,9 @@
         <div class="center">野球アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめの野球アニメは…</p>
-        <h1>「メジャー2nd」</h1>
-        <p>です！！</p>
-        <img src="img/animes/meja.png" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="メジャー2nd<br>(アニメ,スポーツ)" class="hosikun"><br>
         <a href="https://www.shopro.co.jp/tv/major2nd/"class="sarani">気になる</a>
         <ons-button id="pop-button">戻る</ons-button>
@@ -105,13 +133,9 @@
         <div class="center">野球アニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>続いての野球アニメは…</p>
-        <h1>「ダイヤのA」</h1>
-        <p>です！！</p>
-        <img src="img/animes/daia.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
-       
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="ダイヤのA<br>(アニメ,スポーツ)" class="hosikun"><br>
         <a href="https://diaace.com/sp/index.html"class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button><br>
@@ -127,12 +151,9 @@
         <div class="center">バレーアニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめのバレーアニメは…</p>
-        <h1>「ハイキュー」</h1>
-        <p>です！！</p>
-        <img src="img/animes/haikyu.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="ハイキュー<br>(アニメ,スポーツ)" class="hosikun"><br>
         <a href="https://haikyu.jp/"class="sarani">気になる</a>
         <ons-button id="pop-button">戻る</ons-button><br>

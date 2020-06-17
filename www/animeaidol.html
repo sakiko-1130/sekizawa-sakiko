@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -14,31 +15,17 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
+    let oshibudo = new Sakuhin("アニメ", animes[17].id, animes[17].title,"img/animes/eripiyo.jpg", animes[17].text);
     // Page init event
-    // document.addEventListener('init', function(event) {
-      // var page = event.target;
-
-    //   if (page.matches('#first-page')) {
-
-    //     page.querySelector('#push-button').onclick = function() {
-    //       document.querySelector('#navigator').pushPage('page2.html');
-    //     };
-
-    //   } else if (page.matches('#second-page')) {
-
-    //     page.querySelector('#pop-button').onclick = function() {
-    //       document.querySelector('#navigator').popPage();
-    //     };
-
-    //   } 
-    // });
-
-    // if (ons.platform.isIPhoneX()) {
-    //   document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-    //   document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-    // }
-    // }
-
+    document.addEventListener('init', function(event) {
+      var oshibudoHTML = oshibudo.getSetText();
+        var box1 = document.querySelector("#first-page .text");
+         box1.appendChild(oshibudoHTML.osusume);
+         box1.appendChild(oshibudoHTML.daimei);
+         box1.appendChild(oshibudoHTML.desu);
+         box1.appendChild(oshibudoHTML.shashin);
+         box1.appendChild(oshibudoHTML.kansou);
+    });
   </script>
 </head>
 <body>
@@ -50,12 +37,9 @@
         <div class="center">アイドルアニメ</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめのアイドルアニメは…</p>
-        <h1>「推しが武道館いってくれたら死ぬ」</h1>
-        <p>です！！</p>
-        <img src="img/animes/eripiyo.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="推しが武道館いってくれたら死ぬ<br>(アニメ,アイドル)" class="hosikun"><br>
         <a href="https://oshibudo.com/"class="sarani"> 気になる</a>
         
