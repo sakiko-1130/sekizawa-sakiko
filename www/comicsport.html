@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -14,6 +15,12 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
+
+    let htwo = new Sakuhin("漫画", mangas[10].id, mangas[10].title,"img/comics/h2.jpg", mangas[10].text);
+    let batoru = new Sakuhin("漫画", mangas[11].id, mangas[11].title,"img/comics/batoru.jpg", mangas[11].text);
+    let kami = new Sakuhin("漫画", mangas[12].id, mangas[12].title,"img/comics/kamisama.jpg", mangas[12].text);
+    let harigane = new Sakuhin("漫画", mangas[13].id, mangas[13].title,"img/comics/harigane.jpg", mangas[13].text);
+
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
@@ -29,6 +36,15 @@
         };
 
       } else if (page.matches('#second-page')) {//野球紹介
+       
+        var htwoHTMLs = htwo.getSetText();
+        var box1 = document.querySelector("#second-page .text");
+         box1.appendChild(htwoHTMLs.osusume);
+         box1.appendChild(htwoHTMLs.daimei);
+         box1.appendChild(htwoHTMLs.desu);
+         box1.appendChild(htwoHTMLs.shashin);
+         box1.appendChild(htwoHTMLs.kansou);
+       
         //戻る
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -40,10 +56,26 @@
 
       } else if (page.matches('#third-page')) {
 
+        var batoruHTMLs = batoru.getSetText();
+        var box2 = document.querySelector("#third-page .text");
+         box2.appendChild(batoruHTMLs.osusume);
+         box2.appendChild(batoruHTMLs.daimei);
+         box2.appendChild(batoruHTMLs.desu);
+         box2.appendChild(batoruHTMLs.shashin);
+         box2.appendChild(batoruHTMLs.kansou);
+
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
         };
       } else if (page.matches('#four-page')) {
+
+        var kamiHTMLs = kami.getSetText();
+        var box3 = document.querySelector("#four-page .text");
+         box3.appendChild(kamiHTMLs.osusume);
+         box3.appendChild(kamiHTMLs.daimei);
+         box3.appendChild(kamiHTMLs.desu);
+         box3.appendChild(kamiHTMLs.shashin);
+         box3.appendChild(kamiHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -53,6 +85,14 @@
           document.querySelector('#navigator').pushPage('page5.html');
         };
       } else if (page.matches('#five-page')) {
+
+        var hariganeHTMLs = harigane.getSetText();
+        var box4 = document.querySelector("#five-page .text");
+         box4.appendChild(hariganeHTMLs.osusume);
+         box4.appendChild(hariganeHTMLs.daimei);
+         box4.appendChild(hariganeHTMLs.desu);
+         box4.appendChild(hariganeHTMLs.shashin);
+         box4.appendChild(hariganeHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -91,12 +131,9 @@
         <div class="center">野球漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめの野球漫画は…</p>
-        <h1>「H2」</h1>
-        <p>です！！</p>
-        <img src="img/comics/h2.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="H2<br>(漫画,スポーツ)" class="hosikun"><br>
         <a href="https://www.shopro.co.jp/tv/major2nd/" class="sarani">気になる</a>
         <ons-button id="pop-button">戻る</ons-button>
@@ -114,12 +151,9 @@
         <div class="center">野球漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>続いての野球漫画は…</p>
-        <h1>「バトルスタディーズ」</h1>
-        <p>です！！</p>
-        <img src="img/comics/batoru.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="バトルスタディーズ<br>(漫画,スポーツ)" class="hosikun"><br>
         <a href="https://diaace.com/"class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button><br>
@@ -135,12 +169,9 @@
         <div class="center">バレー漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめのバレー漫画は…</p>
-        <h1>「神様のバレー」</h1>
-        <p>です！！</p>
-        <img src="img/comics/kamisama.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="神様のバレー<br>(漫画,スポーツ)" class="hosikun"><br>
         <a href="https://manga.line.me/product/periodic?id=00006uue"class="sarani">気になる</a> 
         <ons-button id="pop-button">戻る</ons-button>
@@ -157,12 +188,9 @@
         <div class="center">バレー漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめのバレー漫画は…</p>
-        <h1>「ハリガネサービス」</h1>
-        <p>です！！</p>
-        <img src="img/comics/harigane.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="ハリガネサービス<br>(漫画,スポーツ)" class="hosikun"><br>
         <a href="https://manga.line.me/product/periodic?id=0000de0j" class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button><br>

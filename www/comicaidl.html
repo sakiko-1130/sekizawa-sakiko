@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -14,30 +15,21 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
+
+    let akb = new Sakuhin("漫画", mangas[20].id, mangas[20].title,"img/comics/49.jpg", mangas[20].text);
+
     // Page init event
-    // document.addEventListener('init', function(event) {
-      // var page = event.target;
+    document.addEventListener('init', function(event) {
 
-    //   if (page.matches('#first-page')) {
+      var akbHTMLs = akb.getSetText();
+        var box1 = document.querySelector("#first-page .text");
+         box1.appendChild(akbHTMLs.osusume);
+         box1.appendChild(akbHTMLs.daimei);
+         box1.appendChild(akbHTMLs.desu);
+         box1.appendChild(akbHTMLs.shashin);
+         box1.appendChild(akbHTMLs.kansou);
 
-    //     page.querySelector('#push-button').onclick = function() {
-    //       document.querySelector('#navigator').pushPage('page2.html');
-    //     };
-
-    //   } else if (page.matches('#second-page')) {
-
-    //     page.querySelector('#pop-button').onclick = function() {
-    //       document.querySelector('#navigator').popPage();
-    //     };
-
-    //   } 
-    // });
-
-    // if (ons.platform.isIPhoneX()) {
-    //   document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-    //   document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-    // }
-    // }
+    });
 
   </script>
 </head>
@@ -50,12 +42,9 @@
         <div class="center">アイドル漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめのアイドル漫画は…</p>
-        <h1>「AKB49」</h1>
-        <p>です！！</p>
-        <img src="img/comics/49.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="AKB49<br>(漫画,アイドル)" class="hosikun"><br>
         <a href="https://www.cmoa.jp/title/52578/" class="sarani"style="margin-bottom:10px">気になる</a>
         <a href="index.html" class="tophe" style="margin-bottom:20px;margin-top:0pxl">TOPへ</a>

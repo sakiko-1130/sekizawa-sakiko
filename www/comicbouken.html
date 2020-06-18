@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
   
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -14,17 +15,37 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script>
+
+    let never = new Sakuhin("漫画", mangas[4].id, mangas[4].title,"img/comics/nevar.jpg", mangas[4].text);
+    let hunter = new Sakuhin("漫画", mangas[5].id, mangas[5].title,"img/comics/hunter.jpg", mangas[5].text);
+
     // Page init event
     document.addEventListener('init', function(event) {
       var page = event.target;
 
       if (page.matches('#first-page')) {
 
+        var neverHTMLs = never.getSetText();
+        var box1 = document.querySelector("#first-page .text");
+         box1.appendChild(neverHTMLs.osusume);
+         box1.appendChild(neverHTMLs.daimei);
+         box1.appendChild(neverHTMLs.desu);
+         box1.appendChild(neverHTMLs.shashin);
+         box1.appendChild(neverHTMLs.kansou);
+
         page.querySelector('#push-button').onclick = function() {
           document.querySelector('#navigator').pushPage('page2.html');
         };
 
       } else if (page.matches('#second-page')) {
+
+        var hunterHTMLs = hunter.getSetText();
+        var box2 = document.querySelector("#second-page .text");
+         box2.appendChild(hunterHTMLs.osusume);
+         box2.appendChild(hunterHTMLs.daimei);
+         box2.appendChild(hunterHTMLs.desu);
+         box2.appendChild(hunterHTMLs.shashin);
+         box2.appendChild(hunterHTMLs.kansou);
 
         page.querySelector('#pop-button').onclick = function() {
           document.querySelector('#navigator').popPage();
@@ -48,12 +69,9 @@
         <div class="center">冒険漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>あなたにおすすめの冒険漫画は…</p>
-        <h1>「約束のネバーランド」</h1>
-        <p>です！！</p>
-        <img src="img/comics/nevar.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="約束のネバーランド<br>(漫画,冒険)" class="hosikun"><br>
         <a href="https://www.cmoa.jp/title/124071/" class="sarani">気になる</a>
         <ons-button id="push-button">次の作品へ</ons-button>
@@ -69,12 +87,9 @@
         <div class="center">冒険漫画</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <p>続いての冒険漫画は…</p>
-        <h1>「HUNTER × HUNTER」</h1>
-        <p>です！！</p>
-        <img src="img/comics/hunter.jpg" class="animes-img"><br>
-        <p class="anime-text">とても面白い。とても感動する。ぜひとも皆さんにもみてほしいですね。</p>
+      <div style="text-align: center">
+        <div class="content text">
+        </div>
         <img src="img/hosimae.png" data-destsrc="img/hosiato.png" id="HUNTER × HUNTER<br>(漫画,冒険)" class="hosikun"><br>
         <a href="https://www.cmoa.jp/title/59386/" class="sarani">気になる</a>
         <ons-button id="pop-button">前の作品へ</ons-button><br>
