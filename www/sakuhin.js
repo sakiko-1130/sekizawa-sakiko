@@ -10,7 +10,7 @@
 
       {'id':"恋愛" , 'title': "パンプキンタイム",
       'text' :
-      "ある日突然性別が変わってしまっていた(男→女)子が、小さい頃に幼馴染でチームメイトだった子に再開する‼"},
+      "ある日突然性別が変わってしまっていた(男→女)子が、小さい頃に幼馴染でチームメイトだった男の子に再開する‼"},
       
       {'id':"恋愛" , 'title': "ワンダフルデイズ",
       'text' :
@@ -104,7 +104,7 @@
 
       { 'id' : "冒険" , 'title' : "Re:ゼロから始める\n異世界生活",
       'text' : 
-      "主人公が死ぬとある程度時間が戻ってしまう不思議な異世界。戦闘能力もなく魔法も使えないちょっと根性の曲がった主人公が時間を進めようと奮闘する姿がよかったりする。" },
+      "主人公が死ぬと時間が戻ってしまう不思議な異世界。戦闘能力もなく魔法も使えないちょっと根性の曲がった主人公が時間を進めようと奮闘する姿がよかったりする。" },
 
       { 'id' : "冒険" , 'title' : "甲鉄城のカバネリ",
       'text' :
@@ -165,15 +165,15 @@
    
    var genre = [
       {'chref' : "comickoi.html" , 'ahref' : "animekoi.html" , 'genr' : "恋愛" , 'src' : "img/love.png"},
-      {'chref' : "comicbouken.html" , 'ahref' : "animebouken.html" , 'genr' : "冒険" , 'src' : "img/bouken.jpg"},
+      {'chref' : "comicbouken.html" , 'ahref' : "animebouken.html" , 'genr' : "冒険" , 'src' : "img/bouken.png"},
       {'chref' : "comicsentou.html" , 'ahref' : "animesentou.html" , 'genr' : "戦闘" , 'src' : "img/buki.png"},
       {'chref' : "comicsport.html" , 'ahref' : "animesuports.html" , 'genr' : "スポーツ" , 'src' : "img/suport.png"},
       {'chref' : "comicstudy.html" , 'ahref' : "animestudy.html" , 'genr' : "勉強" , 'src' : "img/study.png"},
-      {'chref' : "comicgyag.html" , 'ahref' : "animegyagu.html" , 'genr' : "ギャグ" , 'src' : "img/warai.jpg"},
+      {'chref' : "comicgyag.html" , 'ahref' : "animegyagu.html" , 'genr' : "ギャグ" , 'src' : "img/warai.png"},
       {'chref' : "comiccook.html" , 'ahref' : "animecook.html" , 'genr' : "料理" , 'src' : "img/cook.png"},
-      {'chref' : "comicaidl.html" , 'ahref' : "animeaidol.html" , 'genr' : "アイドル" , 'src' : "img/aidl.jpg"},
+      {'chref' : "comicaidl.html" , 'ahref' : "animeaidol.html" , 'genr' : "アイドル" , 'src' : "img/aidol.png"},
       {'chref' : "comictou.html" , 'genr' : "塔を上る" , 'src' : "img/kaidann.jpg"},
-      {'chref' : "comicgakuen.html" , 'genr' : "学園" , 'src' : "img/gakkou.jpg"},
+      {'chref' : "comicgakuen.html" , 'genr' : "学園" , 'src' : "img/gakkou.png"},
       {'ahref' : "animefuture.html" , 'genr' : "近未来" , 'src' : "img/mirai.jpg"},
    ];
 
