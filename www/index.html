@@ -177,7 +177,7 @@
     <ons-page id="first-page">
       <div class="page__background" style="background-image:url('img/nami.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
-        <div class="center"></div>
+        <div class="center">漫画・アニメのすすめ</div>
       </ons-toolbar>
 
       <div class="content" style="text-align: center;width:80%;margin:0 auto;">
@@ -200,14 +200,17 @@
         <p class="selectone">漫画かアニメどちらにしますか？</p>
 
         <div class="select-one">
+          <img class="manga" src="img/漫画.png">
           <ons-button id="push-button" class="kategori">漫画カテゴリへ</ons-button>
-          <img class="manga" src="img/漫画.png"><br>
         </div>
         <div class="select-one">
-          <img class="ace" src="img/tv.png">
+          <img class="manga" src="img/tv.png">
           <ons-button id="push-4button"class="kategori">アニメカテゴリへ</ons-button>
         </div>
-        <a href="okiniitiran.html" class="okinis">お気に入り一覧へ</a>
+        <div class="select-one okinin">
+          <img class="okiniran" src="img/okini.png">
+          <a href="okiniitiran.html" class="okinis">お気に入り一覧へ</a>
+        </div>
         <!-- <ons-button class="select btn" id="pop-button">Pop page</ons-button> -->
       </div>
       </div>
@@ -242,7 +245,7 @@
         <p class="selected">漫画一覧</p>
 
         <!-- 漫画の一覧の表 -->
-        <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
+        <table border=3 bordercolor="blue" bgcolor="skyblue" width="95%"height="200"style="margin:0 auto;">
           <thead>
             <tr>
               <th style="width:40%">ジャンル</th>
