@@ -47,13 +47,8 @@
       tr.appendChild(td1);
       tr.appendChild(td2);
       td1.innerHTML = _key;
-      // td2.innerHTML = localStorage.getItem(_key);
-      //キーの部分↑
       td2.innerHTML = '<input id="clear" type="button" id="clear" onclick="removeStorage(\'' + _key + '\')" value="削除">';
     }
   });
-  
-
-
 
 }
