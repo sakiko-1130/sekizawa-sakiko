@@ -109,32 +109,33 @@
 </head>
 <body>
   <ons-navigator id="navigator" page="page1.html"></ons-navigator>
-
   <ons-template id="page1.html">
     <ons-page id="first-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="center">セレクト</div>
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
-        <p>どちらか選んでください</p>
+        <p class="genretext">どちらか選んでください</p>
         <div class="bare">
           <img src="img/yakyu4.png" class="sports">
           <img src="img/yakyu3.png" class="sports">
         </div>
-        <ons-button id="push-button" >野球へ &gt;</ons-button>
+        <ons-button id="push-button" class="sport">野球</ons-button>
         <div class="bare">
           <img src="img/bare3.png" class="sports">
           <img src="img/bare4.png" class="sports">
         </div>
-        <ons-button id="push-vbutton">バレーへ &gt;</ons-button>
-        <a href="index.html"class="tophe" >TOPへ</a>
+        <ons-button id="push-vbutton" class="sport">バレー</ons-button>
+        <a href="index.html"class="tophe" style="margin-top:50px;" >TOPへ</a>
       </div>
     </ons-page>
   </ons-template>
 
   <ons-template id="page2.html">
     <ons-page id="second-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="left"><ons-back-button>戻る</ons-back-button></div>
         <div class="center">野球漫画</div>
@@ -155,6 +156,7 @@
 
   <ons-template id="page3.html">
     <ons-page id="third-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="left"><ons-back-button>戻る</ons-back-button></div>
         <div class="center">野球漫画</div>
@@ -173,6 +175,7 @@
  
   <ons-template id="page4.html">
     <ons-page id="four-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="left"><ons-back-button>カテゴリへ</ons-back-button></div>
         <div class="center">バレー漫画</div>

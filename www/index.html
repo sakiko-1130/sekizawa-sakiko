@@ -175,7 +175,7 @@
 <!-- -----------------トップ画面-Page.1----------------- -->
   <ons-template id="page1.html">
     <ons-page id="first-page">
-      <div class="page__background" style="background-image:url('img/nami.jpg'); background-size:cover;margin:0 auto;"></div>
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="center">漫画・アニメのすすめ</div>
       </ons-toolbar>
@@ -191,25 +191,26 @@
 <!-- ----------------アニメか漫画か-Page.2----------------- -->
   <ons-template id="page2.html">
     <ons-page id="second-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="left"><ons-back-button>TOPへ</ons-back-button></div>
-        <div class="center">どちらか選んでください</div>
+        <div class="center">漫画・アニメのすすめ</div>
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
-        <p class="selectone">漫画かアニメどちらにしますか？</p>
+        <p class="selectone">一つ選んで下さい</p>
 
         <div class="select-one">
           <img class="manga" src="img/漫画.png">
-          <ons-button id="push-button" class="kategori">漫画カテゴリへ</ons-button>
+          <ons-button id="push-button" class="kategori">漫画カテゴリ</ons-button>
         </div>
         <div class="select-one">
           <img class="manga" src="img/tv.png">
-          <ons-button id="push-4button"class="kategori">アニメカテゴリへ</ons-button>
+          <ons-button id="push-4button"class="kategori">アニメカテゴリ</ons-button>
         </div>
         <div class="select-one okinin">
           <img class="okiniran" src="img/okini.png">
-          <a href="okiniitiran.html" class="okinis">お気に入り一覧へ</a>
+          <a href="okiniitiran.html" class="okinis">お気に入り一覧</a>
         </div>
         <!-- <ons-button class="select btn" id="pop-button">Pop page</ons-button> -->
       </div>
@@ -220,15 +221,16 @@
   <!-- --------------漫画のカテゴリ-Page.3-------------- -->
   <ons-template id="page3.html">
     <ons-page id="third-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="left"><ons-back-button>戻る</ons-back-button></div>
-        <div class="center">漫画セレクト</div>
+        <div class="center">漫画ジャンル</div>
       </ons-toolbar>
 
       <div class="content" id="cgenre" style="text-align: center">
-        <p class="genretext">カテゴリを一つ選んでね</p>
-        <ons-button class="select btn" id="pop-button" style="background-color:rgb(206, 241, 255);color:#0076FF;">&lt; 戻る</ons-button>
-        <ons-button id="push-button" class="kate">漫画一覧へ &gt;</ons-button>
+        <p class="genretext">一つ選んで下さい</p>
+        <ons-button class="select btn" id="pop-button" style="background-color:rgb(206, 241, 255);color:#0076FF;margin-bottom:20px;">&lt; 戻る</ons-button>
+        <ons-button id="push-button" class="kate gori">漫画一覧 &gt;</ons-button>
       </div>
     </ons-page>
   </ons-template>
@@ -236,13 +238,14 @@
   <!-- -----------------漫画一覧画面-Page.4-------------- -->
   <ons-template id="page4.html">
     <ons-page id="four-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
-        <div class="left"><ons-back-button>カテゴリへ</ons-back-button></div>
+        <div class="left"><ons-back-button>ジャンルへ</ons-back-button></div>
         <div class="center">漫画一覧</div>
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
-        <p class="selected">漫画一覧</p>
+        <p class="selected">漫画・全22作品</p>
 
         <!-- 漫画の一覧の表 -->
         <table border=3 bordercolor="blue" bgcolor="skyblue" width="95%"height="200"style="margin:0 auto;">
@@ -265,15 +268,16 @@
   <!-- -------------アニメのカテゴリ-Page.5-------------- -->
   <ons-template id="page5.html">
     <ons-page id="five-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
         <div class="left"><ons-back-button>戻る</ons-back-button></div>
-        <div class="center">アニメセレクト</div>
+        <div class="center">アニメジャンル</div>
       </ons-toolbar>
 
       <div class="content" id="agenre" style="text-align: center">
-        <p class="genretext">カテゴリを一つ選んでね</p>
-        <ons-button class="select btn" id="pop-button" style="background-color:rgb(206, 241, 255);color:#0076FF;">&lt; 戻る</ons-button>
-        <ons-button id="push-button" class="kate">アニメ一覧へ &gt;</ons-button>
+        <p class="genretext">一つ選んで下さい</p>
+        <ons-button class="select btn" id="pop-button" style="background-color:rgb(206, 241, 255);color:#0076FF;margin-bottom:20px;">&lt; 戻る</ons-button>
+        <ons-button id="push-button" class="kate">アニメ一覧 &gt;</ons-button>
       </div>
     </ons-page>
   </ons-template>
@@ -281,14 +285,15 @@
    <!-- -------------アニメ一覧画面-Page.6---------------- -->
   <ons-template id="page6.html">
     <ons-page id="six-page">
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
       <ons-toolbar>
-        <div class="left"><ons-back-button>カテゴリへ</ons-back-button></div>
+        <div class="left"><ons-back-button>ジャンルへ</ons-back-button></div>
         <div class="center">アニメ一覧</div>
       </ons-toolbar>
 
       <div class="content" style="text-align: center">
         
-        <p class="selected">アニメ一覧</p>
+        <p class="selected">アニメ・全18作品</p>
         <!-- アニメ一覧の表 -->
         <table border="3" bordercolor="blue" bgcolor="skyblue"  width="95%"height="200"style="margin:0 auto;">
           <thead>

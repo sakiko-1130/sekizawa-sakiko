@@ -7,6 +7,7 @@
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="hoshi.js"></script>
+  <script src="sakuhin.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -23,33 +24,35 @@
 
   <ons-template id="page1.html">
     <ons-page id="first-page">
-      <ons-toolbar>
-        <div class="center">お気に入り一覧</div>
+      <div class="page__background" style="background-image:url('img/haikei.jpg'); background-size:cover;margin:0 auto;"></div>
+      <ons-toolbar class="only">
+        <div class="center">お気に入り</div>
       </ons-toolbar>
 
-      <div class="content" style="text-align: center">
-        <body style="background-color:rgb(245, 245, 94);color:white;font-family: Arial, Helvetica;text-align: center; ">
-          <header >
-            <h1 class="center" style="
-            text-shadow:1px;color:rgb(73, 255, 57);color:orange;
+      <div class="one">
+        <div class="content" style="text-align: center">
+          <body style="background-color:rgb(245, 245, 94);color:white;font-family: Arial, Helvetica;text-align: center; ">
+            <header >
+              <h1 class="center" style="
+            text-shadow:1px;color:orange;
             text-shadow:
             -1px -1px 0 white,
             1px -1px 0 white,
             -1px 1px 0 white,
             1px 1px 0 white;font-size:36px;margin-bottom:0px;">お気に入り一覧</h1>
           </header>
-        
-        <br><br>
-        
-        <table border=3  style="border-color:rgb(229, 255, 0);background-color:orange; width: 98%; margin:0 auto;">
-          <tr>
-            <th style="color:rgb(100, 102, 85);;font-size:25px;margin:0 auto;">タイトル</th>
-          </tr>
-          <tbody id="tb" style="font-size:25px;">
-          </tbody>
-        </table>
-        <a href="index.html" class="modoru">TOPへ戻る</a>
-        </body>
+          
+          <br><br>
+          
+          <table border=3  style="border-color:rgb(229, 255, 0);background-color:orange; width: 98%; margin:0 auto;">
+            <tr>
+              <th style="color:rgb(100, 102, 85);font-size:25px;margin:0 auto;">タイトル</th>
+            </tr>
+            <tbody id="tb" style="font-size:25px;">
+            </tbody>
+          </table>
+          <a href="index.html" class="modoru">TOPへ戻る</a>
+        </div>
       </div>
     </ons-page>
   </ons-template>

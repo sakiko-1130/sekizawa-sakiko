@@ -17,7 +17,8 @@
     }
   }
   
- 
+
+  
   // window.onload = function() {
   document.addEventListener('init', function(event) {
 
@@ -31,7 +32,7 @@
         setStar(element);
       }
     });
-
+    
     //Local Storageの中身を順番に表に埋め込んでいく
 
     for (var i=0; i < localStorage.length; i++) {
@@ -40,7 +41,8 @@
       var td1 = document.createElement("td");
 
 
-      // var td2 = document.createElement("td");
+
+      var td2 = document.createElement("td");
       // var td3 = document.createElement("td");
       tb.appendChild(tr);
       tr.appendChild(td1);
@@ -49,14 +51,11 @@
       td1.innerHTML = _key;
       // td2.innerHTML = localStorage.getItem(_key);
       //キーの部分↑
-      // td3.innerHTML = '<input type="button" onclick="removeStorage(\'' + _key + '\')" value="削除">';
+      // td3.innerHTML = '<input type="button" id="clear" onclick="removeStorage(\'' + _key + '\')" value="削除">';
+      // td3.classList.add("hosikun");
     }
-    // document.getElementById("save").onclick = function() { 
-    //   saveStorage();
-    // };
     
-   
   });
-
+  
 
 }
