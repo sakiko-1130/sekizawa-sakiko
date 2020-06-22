@@ -17,45 +17,44 @@
     }
   }
   
-
-  
-  // window.onload = function() {
+  // 特定のキーと値を削除
+  var removeStorage = function(key){
+    localStorage.removeItem(key);
+    // key = "";
+    location.reload();
+  };
+    
   document.addEventListener('init', function(event) {
-
+    
     document.querySelectorAll('.hosikun').forEach((element) => {  
       //前回の時点でお気に入りに登録したものを読み込む。（星を黄色にする）
       setStar(element); 
-
+      
       // クリックしたときにLocal Storageに情報取得と星を入れ替える
       element.onclick = () => {
         toggle(element);
         setStar(element);
       }
     });
-    
+        
     //Local Storageの中身を順番に表に埋め込んでいく
 
     for (var i=0; i < localStorage.length; i++) {
       var _key = localStorage.key(i);
       var tr = document.createElement("tr");
       var td1 = document.createElement("td");
-
-
-
       var td2 = document.createElement("td");
-      // var td3 = document.createElement("td");
       tb.appendChild(tr);
       tr.appendChild(td1);
-      // tr.appendChild(td2)
-      // tr.appendChild(td3);
+      tr.appendChild(td2);
       td1.innerHTML = _key;
       // td2.innerHTML = localStorage.getItem(_key);
       //キーの部分↑
-      // td3.innerHTML = '<input type="button" id="clear" onclick="removeStorage(\'' + _key + '\')" value="削除">';
-      // td3.classList.add("hosikun");
+      td2.innerHTML = '<input id="clear" type="button" id="clear" onclick="removeStorage(\'' + _key + '\')" value="削除">';
     }
-    
   });
   
+
+
 
 }
