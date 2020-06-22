@@ -20,7 +20,6 @@
   // 特定のキーと値を削除
   var removeStorage = function(key){
     localStorage.removeItem(key);
-    // key = "";
     location.reload();
   };
     
