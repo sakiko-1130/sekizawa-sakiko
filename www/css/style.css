@@ -9,7 +9,7 @@
 }
 
 .start:active {/*暇だをクリック*/
-  width:150px;
+  width:130px;
   border-radius:20px;
   box-shadow:0 3px 0 rgb(52, 140, 255);
   margin-top:144px;
@@ -128,6 +128,10 @@ div.page__background {
   margin-bottom:20px;
 }
 
+.kate:active{
+  opacity:0.3;
+  color:#0076ff;
+}
 
 .itiran {
   width:200px;
@@ -136,7 +140,9 @@ div.page__background {
 
 h1 {
   color:rgb(42, 238, 3);
+  color:white ;
   text-shadow:1px 1px 0 rgb(184, 181, 181);
+  text-shadow:1px 1px 0 rgb(0, 255, 0);
 }
 
 .only {
@@ -228,6 +234,7 @@ a.manga-text:active {
 h1.mang {
   line-height:105px;
   color:rgb(100, 102, 85);
+  text-shadow:1px 1px 0 rgb(184, 181, 181);
   font-size:36px;
   margin-right:15px;
 }
